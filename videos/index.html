@@ -6,8 +6,6 @@
 	<title>首页</title>
 	<link rel="stylesheet" href="css/reset.css" />
 	<script src="js/jquery-2.2.3.min.js"></script>
-	<script src="js/hammer.min.js"></script>
-	<script src="js/jquery.hammer.js"></script>
 	<script src="js/common.js"></script>
 	<script src="ckplayer/ckplayer.js"></script>
 </head>
@@ -60,9 +58,9 @@
 		var video=[ videoUrl + '->video/mp4','http://www.ckplayer.com/webm/0.webm->video/webm','http://www.ckplayer.com/webm/0.ogv->video/ogg'];
 		CKobject.embed('ckplayer/ckplayer.swf',id,'ckplayer_'+ id ,'100%','100%',false,flashvars,video)
 	};
-	loadvideo('video/media.mp4','images/1.jpg','video1');
-	loadvideo('video/media.mp4','images/2.jpg','video2');
-	loadvideo('video/media.mp4','images/1.jpg','video3');
+	loadvideo('video/ceshi.mp4','images/1.jpg','video1');
+	loadvideo('video/ceshi.mp4','images/2.jpg','video2');
+	loadvideo('video/ceshi.mp4','images/1.jpg','video3');
 
 	var loading = 'off';
 	$(window).on("scroll", function () {
