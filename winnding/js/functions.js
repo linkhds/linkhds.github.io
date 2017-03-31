@@ -93,9 +93,9 @@ function startHeartAnimation() {
 })(jQuery);
 
 function timeElapse(date){
-	var oldtime = new Date("2016,12,16");
+	var oldtime = new Date(2016,11,16);
 	var nowtime = new Date().getTime();
-	var result = ((nowtime - oldtime) / 1000 / 3600 / 24).toFixed(0);
+	var result = (((nowtime - oldtime) / 1000 / 3600 / 24) + "").split(".")[0];
 	$("#elapseClock").html(result + "天");
 }
 
