@@ -1,0 +1,168 @@
+﻿@charset 'utf-8';
+/* CSS reset */
+html{max-width: 640px;color:#000;background:#f0f0f0;font-family:'Microsoft YaHei';font-size: 12px;}
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,button,textarea,p,blockquote,th,td,strong{padding:0;margin:0;font-family:'Microsoft YaHei';}
+table{}
+fieldset,img{border:0;}
+a{text-decoration:none; color:#009; outline:none;}/*此处待添加默认链接颜色*/
+var,em,strong{font-style:normal;}
+address,caption,cite,code,dfn,em,strong,th,var, optgroup{font-style:inherit;font-weight:inherit;}
+del,ins{text-decoration:none;}
+li{list-style:none;}
+caption,th{text-align:left;}
+h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal;}
+q:before,q:after{content:'';}
+abbr,acronym{border:0;font-variant:normal;}
+sup{vertical-align:baseline;}
+sub{vertical-align:baseline;}
+legend{color:#000;}
+input,button,textarea,select,optgroup,option{font-family:inherit; font-size:inherit;font-style:inherit;font-weight:inherit;}
+input,button,textarea,select{*font-size:100%;}
+.clearfix:after {content:"\200B"; display:block; height:0; clear:both; }
+.clearfix { *zoom:1; }
+a {-webkit-tap-highlight-color:rgba(0,0,0,0);}
+body {
+	background: #fff;
+}
+.main {
+	width: 100%;
+	height: auto;
+	margin: 0 auto;
+}
+.head-left , 
+.head-right  {
+	float: left;
+	width: 44%;
+	height: 3rem;
+	padding: 2% 3%;
+	line-height: 3rem;
+	text-align: center;
+
+}
+.head-left span,
+.head-right span {
+	float: left;
+	width: 20%;
+	font-size: 1.2rem;
+}
+#years,
+#months {
+	width: 60%;
+	height: 3rem;
+	line-height: 3rem;
+	text-align: center;
+}
+.weeks {
+	width: 98%;
+	height: 3rem;
+	line-height: 3rem;
+	margin: 0 1%;
+}
+.weeks li {
+	float: left;
+	width: 14%;
+	text-align: center;
+	font-size: 1rem;
+	color: blue;
+}
+.weeks .act {
+	color: red;
+}
+.days {
+	margin-left: 1%;
+}
+.days li  {
+	position: relative;
+	float: left;
+	width: 14%;
+	height: 4rem;
+	padding: 0% 0;
+	line-height: 2rem;
+	text-align: center;
+	font-size: 1rem;
+	/*color: blue;*/
+}
+.days li span {
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	display: block;
+	text-align: center;
+	width: 100%;
+	height: 1.5rem;
+	line-height: 1.5rem;
+	font-size: 0.8rem;
+}
+/*.days li:nth-child(7n - 6),
+.days li:nth-child(7n) {
+	color: red;
+}*/
+
+.days .wnl-cal__wrap {
+	color: #555;
+}
+.days .wnl-cal__wrap-weekend {
+	color: #ff823b;
+}
+.days .wnl-cal__solar {
+	opacity: 0.3;
+}
+.days .wnl-cal__wrap--seleted{
+	background: #ccc;
+	color: #fff;
+	border-radius: 5px;
+}
+.days .wnl-cal__wrap-today {
+	background: #ff823b;
+	color: #fff;
+	border-radius: 5px;
+}
+.wnl-l {
+	float: left;
+	width: 50%;
+	text-align: center;
+}
+.wnl-day__solar {
+	width: 60%;
+	margin: 2% auto;
+	padding: 5% 0;
+	background: #ff823b;
+	color: #fff;
+	border-radius: 5%;
+}
+.wnl-day__day {
+	font-size: 2rem;
+}
+.wnl-r {
+	float: right;
+	width: 50%;
+	margin: 0% 0 2%;
+	line-height: 1.8rem;
+}
+.menu {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	z-index: 9;
+	width: 100%;
+	height: 4rem;
+	background: rgba(255,255,255,0.8);
+}
+.menu li {
+	float: left;
+	width: 50%;
+	text-align: center;
+}
+.menu li a {
+	display: block;
+	color: #000;
+}
+.menu li.act {
+	background: #ff823b;
+
+}
+.menu li img {
+	display: block;
+	width: 15%;
+	margin: 2% auto;
+}

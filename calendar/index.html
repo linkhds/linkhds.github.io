@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<title>日历</title>
+	<link rel="stylesheet" href="css/reset.css">
+	<script src="js/jquery-2.2.3.min.js"></script>
+	<script src="js/common.js"></script>
+	<script src="js/wnl.js"></script>
+</head>
+<body>
+	<div class="wnl" id="wnl">
+	    <div class="main clearfix" id="wnl-ctl"></div>
+	    <div class="wnl-main"><div class="main" id="wnl-cal"></div></div>
+	    <div class="foots clearfix" id='wnl-day'></div>
+	</div>
+</body>
+<script>
+var hehe = hhWNL.init({
+    'container': {
+        ctl: 'wnl-ctl',
+        cal: 'wnl-cal',
+        day: 'wnl-day',
+        whr: 'wnl-whr'
+    },
+});
+</script>
+</html>
