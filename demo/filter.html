@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0", target-densitydpi=device-dpi />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no, email=no">
+    <meta name="renderer" content="webkit">
+    <meta name="msapplication-tap-highlight" content="no">
+    <title>filter</title>
+    <style>
+    	.box img {
+    		display: block;
+    		float: left;
+    		width: 200px;
+    		margin: 10px;
+    	}
+    	
+    	.img1 {
+    		filter: grayscale(1); /* 灰度 使图片变成灰色 */
+    	}
+    	.img2 {
+    		filter: sepia(1); /* 褐色 使图片变成灰色 */
+    	}
+    	.img3 {
+    		filter: saturate(0.5); /* 饱和度 */
+    	}
+    	.img4 {
+    		filter: hue-rotate(90deg); /* 用来改变图片的色相 */
+    	}
+    	.img5 {
+    		filter: invert(1); /* 效果就像是我们照相机底面的效果一样 */
+    	}
+    	.img6 {
+    		filter: opacity(.2); /* 改变图片的透明度 */
+    	}
+    	.img7 {
+    		filter: brightness(.5); /* 改变图片的亮度 */
+    	}
+    	.img8 {
+    		filter: contrast(2); /* 改变图片的对比度 */
+    	}
+    	.img9 {
+    		filter: blur(5px); /* 模糊 改变图片清晰度 */
+    	}
+    	.img10 {
+    		filter: drop-shadow(5px 5px 5px #000); /* 这个很像box-shadow一样的效果，给图片加阴影效果 */
+    	}
+    </style>
+</head>
+<body>
+	<div class="box">
+		<img class="img1" src="images/timg.jpg" alt="" />
+		<img class="img2" src="images/timg.jpg" alt="" />
+		<img class="img3" src="images/timg.jpg" alt="" />
+		<img class="img4" src="images/timg.jpg" alt="" />
+		<img class="img5" src="images/timg.jpg" alt="" />
+		<img class="img6" src="images/timg.jpg" alt="" />
+		<img class="img7" src="images/timg.jpg" alt="" />
+		<img class="img8" src="images/timg.jpg" alt="" />
+		<img class="img9" src="images/timg.jpg" alt="" />
+		<img class="img10" src="images/timg.jpg" alt="" />
+	</div>
+</body>
+</html>
