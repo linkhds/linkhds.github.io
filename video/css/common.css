@@ -1,0 +1,459 @@
+html {
+	background: #ffffff;
+	font-family: "PingFang-SC-Medium","Microsoft YaHei", '微软雅黑', 'Arial', 'Helvetica', 'sans-serif', 'Source Han Sans CN';
+}
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,button,textarea,p,blockquote,th,td,strong {
+    padding: 0;
+    margin: 0;
+    font-family: "PingFang-SC-Medium","Microsoft YaHei", '微软雅黑', 'Arial', 'Helvetica', 'sans-serif', 'Source Han Sans CN';
+}
+var,
+i,
+em,
+strong {
+    font-style: normal;
+}
+
+address,caption,cite,code,dfn,em,strong,th,var,optgroup {
+    font-style: inherit;
+    font-weight: inherit;
+}
+body {
+	background: #fff;
+}
+li {
+	list-style: none;
+}
+input,button,textarea,select,optgroup,option {
+    font-family: inherit;
+    font-size: inherit;
+    font-style: inherit;
+    font-weight: inherit;
+    border: none;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none !important;
+    margin: 0;
+}
+
+input {
+    -webkit-appearance: none;
+    border-radius: 0px;
+    border: none;
+    -webkit-tap-highlight-color: transparent;
+    border: 0;
+    outline: none;
+}
+select::-ms-expand{display:none;}
+select{
+  appearance:none;
+ -moz-appearance:none;
+ -webkit-appearance:none;
+ border: none;
+}
+input,button,textarea,select {
+    *font-size: 100%;
+}
+header.bar{
+	color: #fff;
+	background: #fb7299;
+}
+.bar .button-link,
+.title {
+	color:#fff;
+}
+.page, .page-group {
+	background: #fff;
+}
+.clearfix:after {
+    content: "\200B";
+    display: block;
+    height: 0;
+    clear: both;
+}
+
+.clearfix {
+    *zoom: 1;
+}
+
+/*注册和登录*/
+.head-logo {
+	margin: 1.5rem auto 1.48rem;
+}
+.head-logo img {
+	display: block;
+	width: 4.5rem;
+	height: 4.5rem;
+	margin: 0 auto;
+}
+.phone-input dl {
+	width: 85%;
+	height: 3.4rem;
+	padding: 1rem 0 1.05rem;
+	line-height: 1.4rem;
+	margin: 0 auto 1.48rem;
+	border-bottom: 0.05rem solid #ccc;
+}
+.phone-input dt {
+	width: 30%;
+	padding: 0 1rem  0 0.42rem;
+}
+.phone-input select {
+	font-family: PingFang-SC-Medium;
+	font-size: 0.85rem;
+	font-weight: normal;
+	font-stretch: normal;
+	color:  #2f2f2f;
+	padding-right: 30%;
+	background: url(../images/down-icon@3x.png) no-repeat right center;
+	background-size: 12%;
+}
+.phone-input select option {
+	text-align: center;
+}
+.phone-input dd {
+	width: 70%;
+	height: 1.4rem;
+	padding-left: 10%;
+}
+.phone-input dd input {
+	display: block;
+	width: 100%;
+	height: 100%;
+	line-height: 1.4rem;
+	font-size: 0.8rem;
+}
+.button.post-code {
+	display: block;
+	width: 82%;
+	height: 2.25rem;
+	line-height: 2.25rem;
+	text-align: center;
+	margin: 0 auto;
+	background-color: #fb7299;
+	border: none;
+	color: #fff;
+}
+.helps {
+	text-align: center;
+	margin-top: 1.55rem;
+}
+.helps a {
+	font-size: 0.7rem;
+	color: #808080;
+}
+.third-party-title {
+	width: 82%;
+	height: 0.57rem;
+	line-height: 0;
+	margin: 7rem auto 0;
+	text-align: center;
+	font-weight: normal;
+	background: url(../images/line.png) repeat-x center center;
+}
+.third-party-title span {
+	margin: 0 auto;
+	font-size: 0.6rem;
+	color: #808080;
+	padding: 0 5%;
+	background: #fff;
+}
+.third-party dl {
+	width: 2.3rem;
+	text-align: center;
+	margin: 0 2rem;
+}
+.third-party dt img {
+	display: block;
+	width: 2.3rem;
+	height: 2.3rem;
+}
+.third-party .no-gutter {
+	margin-top: 1.18rem;
+}
+.third-party dd {
+	font-size: 0.6rem;
+	font-weight: normal;
+	font-stretch: normal;
+	line-height: 2.25rem;
+	letter-spacing: 0.05rem;
+	color: #808080;
+}
+
+.protocol {
+	width: 75%;
+	height: 1rem;
+	line-height: 0.85rem;
+	margin: 1.5rem auto 0;
+}
+.protocol input[type=checkbox] {
+	float: left;
+	width: 1rem;
+	height: 1rem;
+	margin-right: 2%;
+	background: url(../images/check-icon@3x.png) no-repeat center center;
+	background-size: 100%;
+}
+.protocol input[type=checkbox]:checked {
+	background: url(../images/checked-icon@3x.png) no-repeat center center;
+	background-size: 100%;
+}
+.protocol label {
+	font-size: 0.8rem;
+	font-weight: normal;
+	font-stretch: normal;
+	color: #666666;
+}
+.protocol  a {
+	font-family: PingFang-SC-Medium;
+	font-size: 0.8rem;
+	font-weight: normal;
+	color: #fb7299;
+}
+/* 输入验证码 */
+.identify-code .helps {
+	height: 2.5rem;
+	margin-top: 0rem;
+}
+.identify-code .bar-tab {
+	background: #fff;
+}
+.identify-code .bar-tab:before {
+	display: none;
+}
+.tip-text {
+	margin-top: 2.5rem;
+	font-family: PingFang-SC-Medium;
+	font-size: 0.75rem;
+	font-weight: normal;
+	font-stretch: normal;
+	line-height: 0.65rem;
+	letter-spacing: 0.08rem;
+	color: #2f2f2f;
+	text-align: center;
+}
+.tip-second {
+	width: 100%;
+	height: 0.68rem;
+	padding: 0 12%;
+	margin-top: 0.93rem;
+	font-family: PingFang-SC-Medium;
+	font-size: 0.7rem;
+	font-weight: normal;
+	font-stretch: normal;
+	line-height: 0.65rem;
+	color: #808080;
+	text-align: right;
+}
+
+/* 开通VIP */
+.head-content {
+	width: 100%;
+	height: 7rem;
+	padding: 2.75rem 4% 1rem;
+	background: url(../images/head-bg@3x.png) no-repeat center center;
+	background-size: 100%;
+}
+.head-left {
+	width: 3.2rem;
+	margin-right: 0.8rem;
+}
+.head-portrait {
+	position: relative;
+	width: 100%;
+}
+
+.head-portrait img {
+	width: 100%;
+}
+.head-center h2 {
+	font-size: 0.75rem;
+	font-weight: normal;
+	font-stretch: normal;
+	line-height: 1.3rem;
+	color: #202020;
+	margin-top: 0.2rem;
+}
+.head-center h3 {
+	font-size: 0.7rem;
+	font-weight: normal;
+	font-stretch: normal;
+	line-height: 1.3rem;
+	color: #262626;
+}
+.head-right  .button {
+	width: 3.25rem;
+	height: 1.45rem;
+	margin-top: 0.7rem;
+	color: #fff;
+	border: none;
+	background-color: #ffc002;
+	border-radius: 1.45rem;
+}
+.titles {
+	width: 100%;
+	height: 1.5rem;
+	line-height: 1.5rem;
+	padding: 0 3%;
+	margin: 0.47rem auto 0.63rem;
+	font-size: 0.7rem;
+	font-weight: normal;
+	color: #202020;
+}
+.openvip-con {
+	background: #f4f4f4 ;
+}
+.pay-list {
+	width: 100%;
+	padding: 0 1%;
+}
+.pay-list li {
+	list-style: none;
+	float: left;
+	width: 33.33%;
+	padding: 0 1%;
+}
+.pay-list li span {
+	display: block;
+	width: 100%;
+	height: 3.25rem;
+	line-height: 3.25rem;
+	text-align: center;
+	background-color: #ffffff;
+	border-radius: 0.4rem;
+	border: solid 0.05rem #e7e7e7;
+	color: #202020;
+	font-size: 0.8rem;
+	font-weight: normal;
+	font-stretch: normal;
+}
+.pay-list .active span {
+	border: solid 0.05rem #fb7299;
+	color: #fb7299;
+}
+.button.payment {
+	width: 94%;
+	margin-top: 6rem;
+	font-size: 0.8rem;
+}
+.user-protocol {
+ 	text-decoration: underline;
+ }
+
+ /* 支付页面 */
+.pay header.bar {
+	background: #fff;
+	color: #202020;
+	box-shadow: 0rem 0.05rem 0.2rem 0rem 
+		rgba(0, 0, 0, 0.3);
+}
+.pay .title {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	left: 12%;
+	width: 85%;
+}
+.pay .button-link, .pay .title {
+	color: #202020;
+}
+.pay-text {
+	overflow: hidden;
+	width: 100%;
+	height: 5.5rem;
+	text-align: center;
+	background-color: #f5f5f5;
+}
+.pay-text h2,
+.pay-text h3 {
+	text-align: center;
+}
+.pay-text h2 {
+	padding-top: 0.88rem;
+	font-size: 0.6rem;
+	font-weight: normal;
+	font-stretch: normal;
+	font-family: PingFang-SC-Bold;
+	line-height: 0.65rem;
+	letter-spacing: 0.03rem;
+	color: #202020; 
+}
+.pay-text h3  {
+	padding: 0.45rem 0 0.6rem;
+	font-family: PingFang-SC-Bold;
+	font-size: 0.6rem;
+	font-weight: normal;
+	font-stretch: normal;
+	line-height: 0.65rem;
+	letter-spacing: 0.03rem;
+	color: #555555;
+}
+.pay-text strong {
+	display: inline-block;
+	height: 1.35rem;
+	line-height: 1.3rem;
+	font-family: PingFang-SC-Bold;
+	font-size: 1.8rem;
+	font-weight: normal;
+	font-stretch: normal;
+	letter-spacing: 0rem;
+	color: #202020;
+}
+.pay-style {
+	width: 88%;
+	margin: 0.2rem auto 0;
+}
+.pay-style li {
+	width: 100%;
+	height: 2.42rem;
+	line-height: 2.42rem;
+	border-bottom: 0.05rem solid #ccc;
+}
+.pay-style li a {
+	display: block;
+	font-size: 0.75rem;
+	font-weight: normal;
+	font-stretch: normal;
+	letter-spacing: 0.04rem;
+	color: #202020;
+}
+.qq-pay span {
+	width: 0.95rem;
+	height: 1.2rem;
+	margin: 0.6rem 0.68rem 0 0;
+	background: url(../images/QQpay@3x.png) no-repeat center center;
+	background-size: 100%;
+}
+.wx-pay span {
+	width: 0.97rem;
+	height: 0.9rem;
+	margin: 0.7rem 0.63rem 0 0;
+	background: url(../images/wxpay@3x.png) no-repeat center center;
+	background-size: 100%;
+}
+/* 个人中心 */
+.sign-btn .head-center h2 {
+	margin-top: 0.5rem;
+}
+.sign-btn .head-center a {
+	width: 4.65rem;
+	height: 1.5rem;
+	line-height: 1.5rem;
+	background: #fb7299;
+	border: none;
+	color: #fff;
+}
+.ad {
+	margin: 2.3rem auto;
+}
+.ad a {
+	display: block;
+	width: 100%;
+	padding: 0 3%;
+}
+.ad img {
+	display: block;
+	width: 100%;
+	border-radius: 0.1rem;
+}
