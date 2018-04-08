@@ -6,20 +6,60 @@
 (function(win, undefined) {
 	var doc = win.document,
 		docElem = doc.documentElement;
-
+	var swsun;
+	var swsun1;		
 	var hhWNL = function() {
 		/*
 		Calendar
 		 */
 		var Calendar = function(y, m) {
 			var i, time, tmp1, tmp2;
-
 			y = parseInt(y, 10);
 			m = parseInt(m, 10);
-
 			this.list = {};
 			this.range = this.getCalRange(y, m);
-
+			var time2 = new Date(y + ',5,1');
+			var firstweek = time2.getDay();
+			var secondweek;
+			if(firstweek == 0) {
+				secondweek = 8 - firstweek;
+			}else {
+				secondweek = 15 - firstweek;
+			}
+			if(Solar.prototype.festivals[swsun] != undefined) {
+				if(Solar.prototype.festivals[swsun].length == 2) {
+					Solar.prototype.festivals[swsun].splice(1,1);	
+				}else if(Solar.prototype.festivals[swsun].length == 1) {
+					Solar.prototype.festivals[swsun].splice(0,1);
+				}
+			}
+			swsun = '5-' + secondweek;
+			if(Solar.prototype.festivals[swsun] == undefined) {
+				Solar.prototype.festivals[swsun] = ["母亲节"];
+			}else {
+				Solar.prototype.festivals[swsun].splice("母亲节");
+			}
+			var time3 = new Date(y + ',6,1');
+			var firstweek1 = time3.getDay();
+			var secondweek1;
+			if(firstweek1 == 0) {
+				secondweek1 = 15 - firstweek1;
+			}else {
+				secondweek1 = 22 - firstweek1;
+			}
+			if(Solar.prototype.festivals[swsun1] != undefined) {
+				if(Solar.prototype.festivals[swsun1].length == 2) {
+					Solar.prototype.festivals[swsun1].splice(1,1);	
+				}else if(Solar.prototype.festivals[swsun1].length == 1) {
+					Solar.prototype.festivals[swsun1].splice(0,1);
+				}
+			}
+			swsun1 = '6-' + secondweek1;
+			if(Solar.prototype.festivals[swsun1] == undefined) {
+				Solar.prototype.festivals[swsun1] = ["父亲节"];
+			}else {
+				Solar.prototype.festivals[swsun1].splice("父亲节");
+			}
 			tmp1 = this.range.startTime;
 			for (i = 0; i < 42; i++) {
 				time = tmp1 + i * 86400000;
