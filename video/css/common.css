@@ -76,6 +76,295 @@ header.bar{
 .clearfix {
     *zoom: 1;
 }
+/* nav */
+.bar-tab .tab-item,
+.bar-tab .tab-item.active, .bar-tab .tab-item:active {
+	color: #212121;
+}
+.bar-tab .tab-item .icon~.tab-label {
+	top: 0.08rem;
+}
+.bar-tab .tab-item .icon-sy {
+	width: 1.15rem;
+	height: 0.97rem;
+	background: url(../images/icon-sy.png) no-repeat center center;
+	background-size: 100%;
+}
+.bar-tab .active .icon-sy {
+	background: url(../images/icon-sy-act.png) no-repeat center center;
+	background-size: 100%;
+}
+.bar-tab .tab-item .icon-fl {
+	width: 0.9rem;
+	height: 0.9rem;
+	background: url(../images/icon-fl.png) no-repeat center center;
+	background-size: 100%;
+}
+.bar-tab .active .icon-fl {
+	background: url(../images/icon-fl-act.png) no-repeat center center;
+	background-size: 100%;
+}
+.bar-tab .tab-item .icon-vip {
+	width: 1rem;
+	height: 0.95rem;
+	background: url(../images/icon-vip.png) no-repeat center center;
+	background-size: 100%;
+}
+.bar-tab .active .icon-vip {
+	background: url(../images/icon-vip-act.png) no-repeat center center;
+	background-size: 100%;
+}
+.bar-tab .tab-item .icon-mx {
+	width: 0.95rem;
+	height: 0.9rem;
+	background: url(../images/icon-mx.png) no-repeat center center;
+	background-size: 100%;
+}
+.bar-tab .active .icon-mx {
+	background: url(../images/icon-mx-act.png) no-repeat center center;
+	background-size: 100%;
+}
+.bar-tab .tab-item .icon-wd {
+	width: 0.95rem;
+	height: 0.95rem;
+	background: url(../images/icon-wd.png) no-repeat center center;
+	background-size: 100%;
+}
+.bar-tab .active .icon-wd {
+	background: url(../images/icon-wd-act.png) no-repeat center center;
+	background-size: 100%;
+}
+/* banner滚动图 */
+.swiper-container {
+    width: 100%;
+}
+
+.swiper-slide {
+    -webkit-transition: transform 0.5s;
+    -moz-transition: transform 0.5s;
+    -ms-transition: transform 0.5s;
+    -o-transition: transform 0.5s;
+    -webkit-transform: scale(0.95);
+    transform: scale(0.95);
+}
+
+.swiper-slide-active,
+.swiper-slide-duplicate-active {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+}
+.none-effect {
+    -webkit-transition: none;
+    -moz-transition: none;
+    -ms-transition: none;
+    -o-transition: none;
+}
+.swiper-slide a {
+    display: block;
+    position: relative;
+}
+.swiper-slide a h3 {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	height: 1.5rem;
+	line-height: 1.5rem;
+	padding: 0 0.65rem;
+	font-size: 0.7rem;
+	color: #fffefe;
+	font-weight: normal;
+	font-stretch: normal;
+	letter-spacing: 0.07rem;
+	background-color: rgba(0, 0, 0, 0.3);
+	border-radius: 0rem 0rem 0.4rem 0.4rem;
+}
+.swiper-slide img {
+    width: 100%;
+    height: 8.63rem;
+    border-radius: 0.4rem;
+    display: block;
+}
+
+
+
+/* 首页 */
+.head-slide {
+	width: 100%;
+	height: 9.22rem;
+	padding: 0.3rem 0;
+	background: #f1f1f1;
+}
+.ad-title {
+	width: 100%;
+	height: 2.75rem;
+	line-height: 2.75rem;
+	padding: 0 0.75rem ;
+	border-bottom: 0.05rem solid #ebebeb;
+}
+.ad-title h3 {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	padding-left: 1.23rem;
+	font-size: 0.7rem;
+	color: #000000;
+	background: url(../images/icon-gift@3x.png) no-repeat left center;
+	background-size: 0.7rem 0.7rem;
+}
+.ad-title span {
+	font-size: 0.7rem;
+	color: #a4a4a4;
+}
+.video-list {
+	padding-bottom: 2%;
+}
+.video-list li {
+	float: left;
+	width: 48%;
+	margin: 0.5rem 1% 0;
+}
+.video-list li a {
+	display: block;
+}
+.video-list dt {
+	position: relative;
+	width: 100%;
+}
+.video-list dt span {
+	display: none;
+	position: absolute;
+	top: 0;
+	right: 0;
+	z-index: 2;
+	width: 2.63rem;
+	height: 0.9rem;
+	padding-left: 6%;
+	line-height: 0.9rem;
+	background: url(../images/icon-top-right@3x.png) no-repeat center center;
+	background-size: 100%;
+	color: #fffefe;
+	text-align: center;
+	font-size: 0.6rem;
+	letter-spacing: 0.12rem;
+}
+.active dt span {
+	display: block;
+}
+.video-list dt img {
+	width: 100%;
+	border-radius: 3px;
+
+}
+.video-list dd {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	height: 0.97rem;
+	line-height: 1rem;
+	color: #212121;
+	font-size: 0.6rem;
+}
+
+/* 分类 */
+
+.subnav-list {
+	-webkit-transition: all 0.5s;
+	transition: all 0.5s;
+	overflow: hidden;
+	width: 100%;
+	height: 4.9rem;
+	
+}
+.subnav {
+	padding: 0.72rem 1% 0;
+}
+.subnav li {
+	float: left;
+	width: 25%;
+	padding: 0 2%;
+	margin-bottom: 0.7rem;
+}
+
+.subnav li a {
+	display: block;
+	width: 100%;
+	height: 1.4rem;
+	line-height: 1.4rem;
+	font-size: 0.6rem;
+	text-align: center;
+	color: #1f1f1f;
+	background-color: #f4f4f4;
+	border-radius: 1.38rem;
+}
+.subnav .subnav-active  a {
+	color: #ff0049;
+}
+
+.down-btn {
+	display: block;
+	width: 100%;
+	height: 0.78rem;
+	background: url(../images/icon-down.png) no-repeat center center;
+	background-size: 100%;
+}
+.con-title {
+	width: 100%;
+	margin: 1.07rem 0 0.25rem;
+	text-align: center;
+	font-family: PingFang-SC-Bold;
+	font-size: 0.6rem;
+	font-weight: normal;
+	font-stretch: normal;
+	line-height: 1.3rem;
+	letter-spacing: 0.06rem;
+	color: #1f1f1f;
+}
+.con-title span {
+	padding: 0 10%;
+	background: url(../images/icon3.png) no-repeat center center;
+	background-size: 100%;
+}
+/* vip视频 */
+.head-title {
+	width: 100%;
+	height: 2.8rem;
+	line-height: 1.8rem;
+	padding: 0.6rem 3% 0.4rem;
+}
+.head-title a {
+	float: right;
+	width: 18%;
+	height: 1.45rem;
+	line-height: 1.45rem;
+	margin-top: 0.15rem;
+	background: url(../images/icon1.png) no-repeat center center;
+	background-size: 100%;
+	color: #fffefe;
+	font-size: 0.6rem;
+	text-align: center;
+}
+.head-title span {
+	display: block;
+	padding-left: 12%;
+	background: url(../images/head-icon2.png) no-repeat left center;
+	background-size: 1.8rem 1.8rem;
+	font-family: PingFang-SC-Regular;
+	font-size: 0.7rem;
+	font-weight: normal;
+	font-stretch: normal;
+	letter-spacing: 0.04rem;
+	color: #202020;
+}
+.vip-slide  {
+	width: 100%;
+	height: 9.22rem;
+	padding: 0.3rem 0;
+	background: #fff;
+}
 
 /*注册和登录*/
 .head-logo {
@@ -246,6 +535,29 @@ header.bar{
 	color: #808080;
 	text-align: right;
 }
+.code-input {
+	overflow: hidden;
+	width: 15.12rem;
+	height: 2.27rem;
+	margin: 0.65rem auto 0;
+}
+.code-input input {
+	display: block;
+	float: left;
+	width: 2.27rem;
+	height: 2.27rem;
+	margin-right: 0.3rem;
+	line-height: 2.27rem;
+	text-align: center;
+	color: #333;
+	font-size: 1.2rem;
+	text-align: center;
+	border-bottom: 0.1rem solid #e6e6e6; 
+}
+.code-input input:last-child {
+	margin-right: 0;
+}
+
 
 /* 开通VIP */
 .head-content {
