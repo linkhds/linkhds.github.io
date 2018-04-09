@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>视频详情</title>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="stylesheet" href="css/sm.min.css">
+    <link rel="stylesheet" href="css/video-js.css" />
+    <link rel="stylesheet" href="css/common.css" />
+</head>
+
+<body>
+    <div class="page">
+        <!-- <header class="bar bar-nav">
+            <h1 class="title">视频详情</h1>
+        </header> -->
+        <div class="content details">
+            <div class="head-video">
+                <div class="video-tip">
+                    <h2><span class="icon icon-left pull-left "></span><strong>可试看5分钟，开通VIP免费看</strong></h2>
+                    <h3><em class="open-vertical-modal pull-right">购买单片</em><span class="icon icon-left pull-left "></span></h3>
+                    <button class='play-btn'></button>
+                    <button class='replay-btn'></button>
+                    <button class='pause-btn'></button>
+                    <button class='next-btn'></button>
+                    <strong class="times">00:14/07:14</strong>
+                    <ul class="check-btn">
+                        <li><em>重新试看</em></li>
+                        <li><a href="openvip.html">开通VIP会员</a></li>
+                    </ul>
+                    <div class="sk">您也可以<i>6元购买单片</i></div>
+                </div>
+                <video id="my-video" class="video-js"  preload="auto" poster="images/bg@3x.png" data-setup="{}" webkit-playsinline="true" x-webkit-airplay="true"  playsinline="true">
+                    <source src="videos/20.mp4" type="video/mp4">
+                </video>
+            </div>
+            <div class="video-title">
+                <h3>20170310上世纪20年代流行时尚: 上岛窒息荒野之息！</h3>
+                <ul class="clearfix">
+                    <li class="vip-color">VIP</li>
+                    <li>/#时尚/</li>
+                    <li>13.4亿次播放/</li>
+                    <li>07'14''</li>
+                </ul>
+            </div>
+            <h2 class="titles">精彩截图</h2>
+            <div class="pic-list">
+                <ul class="clearfix">
+                    <li><img src="images/bg1@3x.png" alt="" /></li>
+                    <li><img src="images/bg2@3x.png" alt="" /></li>
+                    <li><img src="images/bg1@3x.png" alt="" /></li>
+                    <li><img src="images/bg2@3x.png" alt="" /></li>
+                    <li><img src="images/bg1@3x.png" alt="" /></li>
+                    <li><img src="images/bg2@3x.png" alt="" /></li>
+                    <li><img src="images/bg1@3x.png" alt="" /></li>
+                    <li><img src="images/bg2@3x.png" alt="" /></li>
+                </ul>
+            </div>
+            <h2 class="titles">全部热评</h2>
+            <a href="signIn.html" class="button post-code payment">1秒登录，说说你的看法</a>
+            <!-- <div class="comment nocomment"> -->
+            <div class="comment ">
+                <div class="nocomment-con">
+                    <span></span>
+                    <strong>暂时还没有评论哦~</strong>
+                </div>
+                <ul>
+                    <li>
+                        <dl class="clearfix">
+                            <dt><img src="images/head-icon@3x.png" alt="" /></dt>
+                            <dd>
+                                <h3>alpho</h3>
+                                <p class="comment-con">卡戴珊吸精姐妹花中的骚女小妹，这就是真相卡戴珊吸精姐妹花中的骚女小妹，这就是真相</p>
+                                <div>
+                                    <span class="more"></span>
+                                    <strong>回复</strong>
+                                    <em>2016-10-15</em>
+                                </div>
+                            </dd>
+                        </dl>
+                    </li>
+                    <li>
+                        <dl class="clearfix">
+                            <dt><img src="images/head-icon@3x.png" alt="" /></dt>
+                            <dd>
+                                <h3>alpho</h3>
+                                <p class="comment-con">卡戴珊吸精姐妹花中的骚女小妹，这就是真相卡戴珊吸精姐妹花中的骚女小妹，这就是真相</p>
+                                <div>
+                                    <span class="more"></span>
+                                    <strong>回复</strong>
+                                    <em>2016-10-15</em>
+                                </div>
+                            </dd>
+                        </dl>
+                    </li>
+                </ul>
+            </div>
+        </div>     
+    </div>
+    <script type='text/javascript' src='js/zepto.min.js' charset='utf-8'></script>
+    <script type='text/javascript' src='js/sm.min.js' charset='utf-8'></script>
+    <script src="js/video.min.js"></script>
+    <script>
+        var myPlayer = videojs('my-video');
+        videojs("my-video").ready(function(){
+            var myPlayer = this;
+            // myPlayer.play();
+        });
+        $(".play-btn").click(function() {
+            $(".video-tip").hide();
+            $(".play-btn").hide();
+            myPlayer.play();
+        })
+        // times()
+        // function times() {
+        //     setTimeout(() => {
+        //         var whereYouAt = myPlayer.currentTime();
+        //         if(whereYouAt >= 6) {
+        //             myPlayer.pause();
+        //         }else {
+        //             times();
+        //         }
+        //     }, 500)
+        // }
+        $(document).on('click','.open-vertical-modal', function () {
+            $.modal({
+              title:  '购买本片',
+              text: '<p>应版权方要求本片需购买观看完整版</p><p>价格：6元（VIP优惠价3元）</p><span>观影有效期至：2018-03-08  13:14</span>',
+              verticalButtons: true,
+              buttons: [
+                {
+                  text: '开通VIP享3元优惠购买',
+                  onClick: function() {
+                    $.alert('You clicked first button!')
+                  }
+                },
+                {
+                  text: '6元原件购买',
+                  onClick: function() {
+                    $.alert('You clicked second button!')
+                  }
+                },
+                {
+                  text: '取消',
+                  onClick: function() {
+                    close: true
+                  }
+                },
+              ]
+            })
+        });
+    </script>
+</body>
+</html>

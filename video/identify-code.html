@@ -10,6 +10,7 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <link rel="stylesheet" href="css/sm.min.css">
+    <link rel="stylesheet" href="css/lanren.css" />
     <link rel="stylesheet" href="css/common.css" />
 </head>
 
@@ -29,45 +30,90 @@
         <div class="content">
             <h2 class="tip-text">已发送短信验证码至+86  <span>150****6732</span></h2>
             <div class="code-input">
-            	<input class="" type="number" maxlength="1" />
-            	<input class="" type="number" maxlength="1" />
-            	<input class="" type="number" maxlength="1" />
-            	<input class="" type="number" maxlength="1" />
-            	<input class="" type="number" maxlength="1" />
-            	<input class="" type="number" maxlength="1" />
+                <ul class="mm_box">
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                </ul>
+                <input type="hidden" />
             </div>
             <p class="tip-second">接收短信大约需要<i class="second-num">53</i>秒</p>
         </div>   
+        <div class="numb_box">
+            <div class="xiaq_tb"> <img src="images/jftc_14.jpg" height="10"> </div>
+            <ul class="nub_ggg">
+              <li><a href="javascript:void(0);">1</a></li>
+              <li><a href="javascript:void(0);" class="zj_x">2</a></li>
+              <li><a href="javascript:void(0);">3</a></li>
+              <li><a href="javascript:void(0);">4</a></li>
+              <li><a href="javascript:void(0);" class="zj_x">5</a></li>
+              <li><a href="javascript:void(0);">6</a></li>
+              <li><a href="javascript:void(0);">7</a></li>
+              <li><a href="javascript:void(0);" class="zj_x">8</a></li>
+              <li><a href="javascript:void(0);">9</a></li>
+              <li><span></span></li>
+              <li><a href="javascript:void(0);" class="zj_x">0</a></li>
+              <li><span  class="del" > <img src="images/jftc_18.jpg"   ></span></li>
+            </ul>
+        </div>
     </div>
     <script type='text/javascript' src='js/zepto.min.js' charset='utf-8'></script>
     <script type='text/javascript' src='js/sm.min.js' charset='utf-8'></script>
     <script>
-    	$(".code-input input").focus(function() {
-    		if($(this).prev().val() == "" && $(this).val() == "") {
-    			$(this).blur().prev().focus();
-    		}
-    	})
-    	$(".code-input input").bind('input propertychange',function() {
-    		if($(this).index() == 0 && $(this).val().length == 6) {
-    			var str = $(this).val().split("");
-    			$(".code-input input").eq(0).val(str[0]);
-    			$(".code-input input").eq(1).val(str[1]);
-    			$(".code-input input").eq(2).val(str[2]);
-    			$(".code-input input").eq(3).val(str[3]);
-    			$(".code-input input").eq(4).val(str[4]);
-    			$(".code-input input").eq(5).val(str[5]).focus();
-    		}else if( $(this).index() != 5 && $(this).next().val() == "") {
-    			$(this).blur().next().focus();
-    		}else if($(this).val().length > 1 ) {
-    			$(this).val($(this).val().slice(0,1))
-    		}
-    	})
-    	$(".code-input input").bind('keydown',function(e) {
-    		if(e.keyCode === 8 && $(this).val().length == 0 &&  $(this).index() != 0 ) {
-    			$(this).blur().prev().focus();
-    		}
-    	})
-
+        var countdown=59; 
+        function settime() { 
+            if (countdown == 0) { 
+                $(".second-num").text(countdown);
+                return;
+            } else { 
+                $(".second-num").text(countdown); 
+                countdown--; 
+            } 
+            setTimeout(function() { settime()},1000) 
+        }
+        settime();
+        $(function(){            
+        //数字显示隐藏
+            $(".xiaq_tb").click(function(){
+                $(".numb_box").css('bottom','-50%');
+            });
+            $(".mm_box").click(function(){
+                $(".numb_box").css('bottom','0%');
+            });
+            //----
+            var linum = 0;
+            $(".nub_ggg li a").click(function(){
+                if(linum<6) {
+                    linum++
+                    if(linum<6){
+                        $(".mm_box li").eq(linum-1).text($(this).text());
+                        
+                    }else{
+                        $(".mm_box li").eq(linum-1).text($(this).text());
+                        var str = "";
+                        for (var i = 0;  i < $('.mm_box li').length; i++) {
+                            str = str + $('.mm_box li').eq(i).text();
+                        }
+                        $(".code-input input").val(str);
+                        setTimeout(function(){
+                            $(".numb_box").css('bottom','-50%');
+                        },500);
+                    }
+                }
+            });
+            
+            $(".nub_ggg li .del").click(function(){ 
+                if(linum>0){
+                    linum--
+                    $(".mm_box li").eq(linum).text("");
+                    linum==0;
+                }
+                 
+            });
+        });
     </script>
 </body>
 </html>

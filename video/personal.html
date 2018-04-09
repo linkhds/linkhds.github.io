@@ -41,16 +41,7 @@
             </a>
         </nav>
         <div class="content openvip-con sign-btn">
-            <div class="head-content">
-            	<div class="head-left pull-left">
-            		<div class="head-portrait">
-            			<img src="images/head-icon@3x.png" alt="" />
-            		</div>
-            	</div>
-            	<div class="head-center pull-left">
-            		<h2><a external href="signIn.html" class="button button-round ">点击登录</a></h2>
-            		<h3>登录后可同步VIP特权</h3>
-            	</div>
+            <div class="head-content ">
             </div>
             <ul class="pay-style">
                 <li class="">
@@ -73,5 +64,22 @@
     </div>
     <script type='text/javascript' src='js/zepto.min.js' charset='utf-8'></script>
     <script type='text/javascript' src='js/sm.min.js' charset='utf-8'></script>
+    <script>
+        var signin = true;
+        var wx = true;
+        var QQ = false;
+        var vip = false;
+        if(signin == false) {
+            $(".head-content").html("<div class='head-left pull-left'><div class='head-portrait'><img src='images/head-icon@3x.png' alt='' /></div></div><div class='head-center pull-left'><h2><a external href='signIn.html' class='button button-round '>点击登录</a></h2><h3>登录后可同步VIP特权</h3></div>")
+        }else if(signin && wx && vip) {
+            $(".head-content").html("<div class='head-left pull-left'><div class='head-portrait'><span></span><img src='images/head-pic@3x.png' alt='' /></div></div><div class='head-center pull-left'><h2>般若意匠</h2><h3><span></span></h3></div>").addClass("signs wx vips");
+        }else if(signin && QQ && vip) {
+            $(".head-content").html("<div class='head-left pull-left'><div class='head-portrait'><span></span><img src='images/head-pic@3x.png' alt='' /></div></div><div class='head-center pull-left'><h2>般若意匠</h2><h3><span></span></h3></div>").addClass("signs QQ vips");
+        }else if(signin && wx ) {
+            $(".head-content").html("<div class='head-left pull-left'><div class='head-portrait'><span></span><img src='images/head-pic@3x.png' alt='' /></div></div><div class='head-center pull-left'><h2>般若意匠</h2><h3><a external href='openvip.html' class='button button-round '>开通VIP会员</a></h3></div>").addClass("signs wx");
+        }else if(signin && QQ ) {
+            $(".head-content").html("<div class='head-left pull-left'><div class='head-portrait'><span></span><img src='images/head-pic@3x.png' alt='' /></div></div><div class='head-center pull-left'><h2>般若意匠</h2><h3><a external href='openvip.html' class='button button-round '>开通VIP会员</a></h3></div>").addClass("signs QQ");
+        }
+    </script>
 </body>
 </html>

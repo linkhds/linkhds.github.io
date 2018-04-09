@@ -139,7 +139,7 @@ header.bar{
     width: 100%;
 }
 
-.swiper-slide {
+.head-slide .swiper-slide {
     -webkit-transition: transform 0.5s;
     -moz-transition: transform 0.5s;
     -ms-transition: transform 0.5s;
@@ -148,22 +148,22 @@ header.bar{
     transform: scale(0.95);
 }
 
-.swiper-slide-active,
-.swiper-slide-duplicate-active {
+.head-slide .swiper-slide-active,
+.head-slide .swiper-slide-duplicate-active {
     -webkit-transform: scale(1);
     transform: scale(1);
 }
-.none-effect {
+.head-slide .none-effect {
     -webkit-transition: none;
     -moz-transition: none;
     -ms-transition: none;
     -o-transition: none;
 }
-.swiper-slide a {
+.head-slide .swiper-slide a {
     display: block;
     position: relative;
 }
-.swiper-slide a h3 {
+.head-slide .swiper-slide a h3 {
 	overflow: hidden;
 	text-overflow: ellipsis;
 	white-space: nowrap;
@@ -182,7 +182,7 @@ header.bar{
 	background-color: rgba(0, 0, 0, 0.3);
 	border-radius: 0rem 0rem 0.4rem 0.4rem;
 }
-.swiper-slide img {
+.head-slide .swiper-slide img {
     width: 100%;
     height: 8.63rem;
     border-radius: 0.4rem;
@@ -541,7 +541,18 @@ header.bar{
 	height: 2.27rem;
 	margin: 0.65rem auto 0;
 }
-.code-input input {
+.code-input1 {
+	display: block;
+	width: 15.12rem;
+	height: 2.27rem;
+	margin: 0.65rem auto 0;
+	background: url(../images/code-line.png) no-repeat center bottom;
+	background-size: 100%;
+	text-indent: 1em;
+	letter-spacing: 2.1rem;
+}
+
+.code-input li {
 	display: block;
 	float: left;
 	width: 2.27rem;
@@ -552,12 +563,11 @@ header.bar{
 	color: #333;
 	font-size: 1.2rem;
 	text-align: center;
-	border-bottom: 0.1rem solid #e6e6e6; 
+	border-bottom: 0.05rem solid #e6e6e6; 
 }
-.code-input input:last-child {
+.code-input li:last-child {
 	margin-right: 0;
 }
-
 
 /* 开通VIP */
 .head-content {
@@ -746,9 +756,10 @@ header.bar{
 	background: url(../images/wxpay@3x.png) no-repeat center center;
 	background-size: 100%;
 }
-/* 个人中心 */
+/* 我的 */
 .sign-btn .head-center h2 {
 	margin-top: 0.5rem;
+	text-indent: 0.5em;
 }
 .sign-btn .head-center a {
 	width: 4.65rem;
@@ -757,6 +768,50 @@ header.bar{
 	background: #fb7299;
 	border: none;
 	color: #fff;
+}
+.signs .head-center a {
+	width: 4.65rem;
+	height: 1.3rem;
+	line-height: 1.3rem;
+	background: #ffc002;
+	border: none;
+	color: #fff;
+	font-size: 0.6rem;
+}
+
+.head-portrait img {
+	width: 100%;
+	height: 3.2rem;
+	border-radius: 50%;
+}
+.head-portrait span  {
+	position: absolute;
+    right: 0.2rem;
+    bottom: 0.3rem;
+    z-index: 2;
+    width: 0.9rem;
+    height: 0.9rem;
+}
+.wx .head-portrait span {
+	background: url(../images/wx1@3x.png) no-repeat center center;
+	background-size: 100%;
+}
+.QQ .head-portrait span {
+	background: url(../images/QQ1@3x.png) no-repeat center center;
+	background-size: 100%;
+}
+.vips .head-center h2 {
+	text-indent: 0;
+}
+.vips .head-center h3 {
+	padding: 0.1rem 0 0 0;
+}
+.vips .head-center span {
+	display: inline-block;
+	width: 1.15rem;
+	height: 1rem;
+	background: url(../images/VIP@3x.png) no-repeat center center;
+	background-size: 90%;
 }
 .ad {
 	margin: 2.3rem auto;
@@ -770,4 +825,409 @@ header.bar{
 	display: block;
 	width: 100%;
 	border-radius: 0.1rem;
+}
+/* 视频详情 */
+.head-video {
+	position: relative;
+}
+.video-tip {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	z-index: 9;
+	background: rgba(0,0,0,0.7);
+}
+.video-tip h2,
+.video-tip h3 {
+	display: none;
+	width: 100%;
+	height: 1.3rem;
+	line-height: 1.3rem;
+	padding: 0 3%;
+	margin-top: 1.2rem;
+	color: #fff;
+	font-size: 0.6rem;
+	text-align: center;
+}
+.open-vertical-modal {
+	display: inline-block;
+	width: 19%;
+	height: 1.3rem;
+	line-height: 1.3rem;
+	text-align: center;
+	font-family: PingFang-SC-Medium;
+	font-size: 0.6rem;
+	font-weight: normal;
+	font-stretch: normal;
+	letter-spacing: 0.05rem;
+	color: #ffffff;
+	background: #ff4545;
+	border-radius: 0.61rem;
+}
+
+.video-tip button {
+	display: none;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	z-index: 2;
+	width: 1.95rem;
+	height: 2.3rem;
+	margin: -1.15rem 0 0 -0.97rem;
+}
+.times {
+	display: none;
+	position: absolute;
+	top: 70%;
+	left: 0%;
+	z-index: 2;
+	width: 100%;
+	height: 0.7rem;
+	line-height: 0.7rem;
+	font-size: 0.7rem;
+	text-align: center;
+	color: #fff;
+	font-weight: normal;
+	font-stretch: normal;
+}
+.check-btn {
+	display: none;
+	position: absolute;
+	top: 50%;
+	left: 0%;
+	z-index: 2;
+	width: 100%;
+	height: 2rem;
+	margin: -1rem 0 0;
+	padding: 0 8%;
+}
+.check-btn li {
+	float: left;
+	width: 45%;
+	height: 2rem;
+	line-height: 2rem;
+	margin-left: 4%;
+	text-align: center;
+	border-radius: 0.2rem;
+	font-size: 0.75rem;
+	color: #fff;
+	letter-spacing: 0.06rem;
+	background: #808080;
+}
+.check-btn li em {
+	padding-left: 1.2rem;
+	background: url(../images/replay.png) no-repeat left center;
+	background-size: 1rem 0.9rem;
+}
+.check-btn li a {
+	display: block;
+	width: 100%;
+	height: 2rem;
+	line-height: 2rem;
+	border-radius: 0.2rem;
+	font-size: 0.75rem;
+	color: #fff;
+	background: #fb7299;
+	letter-spacing: 0.06rem;
+}
+.sk {
+	display: none;
+	position: absolute;
+	top: 70%;
+	width: 100%;
+	height: 0.7rem;
+	line-height: 0.7rem;
+	text-align: center;
+	font-family: PingFang-SC-Regular;
+	font-size: 0.7rem;
+	font-weight: normal;
+	font-stretch: normal;
+	letter-spacing: 0.06rem;
+	color: #ffffff;
+}
+.sk i {
+	font-family: PingFang-SC-Regular;
+	text-decoration: underline;
+	color: #ffc002;
+}
+.video-tip .play-btn {
+	display: block;
+	background: url(../images/play-btn.png) no-repeat center center;
+	background-size: 85%;
+}
+.video-tip .replay-btn {
+	
+	background: url(../images/replay-btn.png) no-repeat center center;
+	background-size: 100%;
+}
+.video-tip .pause-btn {
+	display: none;
+	background: url(../images/pause-btn.png) no-repeat center center;
+	background-size: 85%;
+}
+.video-tip .next-btn {
+	left: 75%;
+	background: url(../images/next-btn.png) no-repeat center center;
+	background-size: 85%;
+}
+
+.video-js {
+	width: 100%;
+	height: 10.55rem;
+}
+.video-title {
+	width: 100%;
+	padding: 0 4%;
+}
+.video-title h3 {
+	margin: 0.88rem 0 0.55rem;
+	font-family: PingFang-SC-Bold;
+	font-size: 0.8rem;
+	font-weight: normal;
+	font-stretch: normal;
+	line-height: 1.1rem;
+	letter-spacing: 0rem;
+	color: #202020;
+}
+.video-title ul {
+	width: 100%;
+}
+.video-title li {
+	float: left;
+	font-family: AdobeHeitiStd-Regular;
+	font-size: 0.6rem;
+	font-weight: normal;
+	font-stretch: normal;
+	color: #131313;
+}
+.video-title .vip-color {
+	color: #edbb16;
+}
+.details .titles {
+	border-top: 0.05rem solid #ccc;
+	height: 2rem;
+	line-height: 1.5rem;
+	padding: 0.5rem 3% 0;
+}
+.pic-list {
+	-webkit-overflow-scrolling: touch;
+	overflow: auto;
+	width: 100%;
+	padding: 3%;
+}
+.pic-list ul {
+	font-size: 0;
+    display: table;
+    width: 100%;
+    white-space: nowrap;
+}
+.pic-list li {
+	display: inline-block;
+	width: 44%;
+	height: 4.65rem;
+	margin-right: 1%;
+}
+.pic-list li img {
+	width: 100%;
+	height: 100%;
+	border-radius: 0.25rem;
+}
+.details .payment {
+	margin-top: 0;
+	font-family: PingFang-SC-Regular;
+	font-size: 0.7rem;
+}
+.comment ul {
+	padding-top: 1rem;
+	padding-left: 3%;
+}
+.comment li {
+	margin-bottom: 0.75rem;
+}
+.comment dt {
+	float: left;
+	width: 11%;
+}
+.comment dt img {
+	display: block;
+	width: 100%;
+	height: 2rem;
+}
+.comment dd {
+	float: left;
+	width: 86%;
+	padding: 0.25rem 3% 0.7rem 0;
+	margin-left: 3%;
+	border-bottom: 0.05rem solid #ccc;
+}
+.comment dd h3 {
+	font-family: PingFang-SC-Regular;
+	font-size: 0.75rem;
+	font-weight: normal;
+	font-stretch: normal;
+	letter-spacing: 0rem;
+	color: #202020;
+	margin-bottom: 0.55rem;
+}
+.comment-con{
+	-webkit-transition: all 0.5s;
+	transition: all 0.5s;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	width: 100%;
+	height: 0.72rem;
+	line-height: 0.72rem;
+	font-size: 0.7rem;
+	color: #4c4c4c;
+}
+.comment dd div {
+	width: 100%;
+	height: 0.57rem;
+	line-height: 0.57rem;
+	font-size: 0.6rem;
+	color:  #4c4c4c;
+	margin-top: 0.78rem;
+}
+.comment dd span {
+	display: inline-block;
+	float: right;
+	width: 5%;
+	height: 0.57rem;
+	background: url(../images/icon-more@3x.png) no-repeat center center;
+	background-size: 100%;
+}
+.comment dd em {
+	margin-left: 4%;
+}
+
+.nocomment {
+	padding-bottom: 1rem;
+}
+.nocomment ul {
+	display: none;
+}
+.nocomment-con {
+	display: none;
+	width: 100%;
+	text-align: center;
+	font-size: 0.7rem;
+    color: #4c4c4c;
+}
+.nocomment-con span {
+	display: block;
+	width: 3.8rem;
+	height: 5.47rem;
+	background: url(../images/nocomment@3x.png) no-repeat center center;
+	background-size: 100%;
+	margin: 1.88rem auto 1.38rem;
+}
+.nocomment .nocomment-con  {
+	display: block;
+} 
+.modal {
+	width: 14.5rem;
+}
+.modal-title {
+	font-family: PingFang-SC-Bold;
+	font-size: 0.9rem;
+	font-weight: normal;
+	font-stretch: normal;
+	line-height: 1.3rem;
+	letter-spacing: 0rem;
+	color: #202020;
+}
+.modal-title+.modal-text {
+	font-family: PingFang-SC-Medium;
+	font-size: 0.75rem;
+	font-weight: normal;
+	font-stretch: normal;
+	line-height: 1.1rem;
+	letter-spacing: 0.02rem;
+	color: #202020;
+	text-align: left;
+}
+.modal-text span {
+	color: #505050;
+}
+.modal-inner {
+	background: #fff;
+}
+.modal-button {
+	height: 2.35rem;
+	line-height: 2.35rem;
+	color: #202020;
+	font-size: 0.8rem;
+	background: #fff;
+}
+.modal-buttons span:first-child {
+	color: #ffc002;
+}
+/* 我的账号 */
+.account-pic {
+	position: relative;
+	width: 23%;
+	height: 4.33rem;
+	margin: 2.45rem auto 1.27rem;
+}
+.account-pic img {
+	width: 100%;
+	height: 4.33rem;
+	border: 1px solid #9e9d96;
+	border-radius: 50%;
+}
+.account-pic span {
+	position: absolute;
+	right: 0rem;
+	bottom: 0rem;
+	z-index: 2;
+	width: 1.2rem;
+	height: 1.2rem;
+}
+.my-account h2 {
+	width: 100%;
+	height: 0.72rem;
+	margin-bottom: 1.45rem ;
+	text-align: center;
+	font-weight: normal;
+	font-stretch: normal;
+	line-height: 0.72rem;
+	color: #202020;
+	font-size: 0.75rem;
+}
+.my-account h2 span {
+	display: inline-block;
+	padding-left: 5%;
+	background: url(../images/VIP@3x.png) no-repeat left center;
+	background-size: 0.65rem 0.65rem;
+}
+.signout {
+	display: block;
+	width: 51%;
+	height: 2.25rem;
+	margin: 0 auto;
+	line-height: 2.25rem;
+	text-align: center;
+	color: #fff;
+	background: #fb7299;
+	border: none;
+	font-size: 0.9rem;
+}
+.wx .account-pic span {
+	background: url(../images/wx1@3x.png) no-repeat center center;
+	background-size: 100%;
+}
+.QQ .account-pic span {
+	background: url(../images/QQ1@3x.png) no-repeat center center;
+	background-size: 100%;
+}
+.wx .signout span {
+	padding-left: 20%;
+	background: url(../images/wx1.png) no-repeat left center;
+	background-size: 1.3rem 1.05rem;
+}
+.QQ .signout span {
+	padding-left: 20%;
+	background: url(../images/QQ1.png) no-repeat left center;
+	background-size: 1rem 1.15rem;
 }
