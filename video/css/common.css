@@ -76,6 +76,13 @@ header.bar{
 .clearfix {
     *zoom: 1;
 }
+
+.bar .button-link.active, 
+.bar .button-link:active,
+.button:active,
+a:active {
+	color: #fff;
+}
 /* nav */
 .bar-tab .tab-item,
 .bar-tab .tab-item.active, .bar-tab .tab-item:active {
@@ -83,6 +90,9 @@ header.bar{
 }
 .bar-tab .tab-item .icon~.tab-label {
 	top: 0.08rem;
+}
+.bar-tab .tab-item .icon {
+	display: inline-block;
 }
 .bar-tab .tab-item .icon-sy {
 	width: 1.15rem;
@@ -136,7 +146,8 @@ header.bar{
 }
 /* banner滚动图 */
 .swiper-container {
-    width: 100%;
+    width: 85%;
+    overflow: visible;
 }
 
 .head-slide .swiper-slide {
@@ -193,6 +204,7 @@ header.bar{
 
 /* 首页 */
 .head-slide {
+	overflow: hidden;
 	width: 100%;
 	height: 9.22rem;
 	padding: 0.3rem 0;
@@ -201,7 +213,7 @@ header.bar{
 .ad-title {
 	width: 100%;
 	height: 2.75rem;
-	line-height: 2.75rem;
+	line-height: 2.8rem;
 	padding: 0 0.75rem ;
 	border-bottom: 0.05rem solid #ebebeb;
 }
@@ -234,10 +246,11 @@ header.bar{
 	position: relative;
 	width: 100%;
 }
+.swiper-slide a span,
 .video-list dt span {
 	display: none;
 	position: absolute;
-	top: 0;
+	top: -1px;
 	right: 0;
 	z-index: 2;
 	width: 2.63rem;
@@ -250,6 +263,11 @@ header.bar{
 	text-align: center;
 	font-size: 0.6rem;
 	letter-spacing: 0.12rem;
+	border-radius:0 3px 0 0;
+}
+.swiper-slide a span {
+	padding-left: 3%;
+	border-radius:0 0.4rem 0 0;
 }
 .active dt span {
 	display: block;
@@ -337,9 +355,9 @@ header.bar{
 }
 .head-title a {
 	float: right;
-	width: 18%;
+	width: 3.4rem;
 	height: 1.45rem;
-	line-height: 1.45rem;
+	line-height: 1.5rem;
 	margin-top: 0.15rem;
 	background: url(../images/icon1.png) no-repeat center center;
 	background-size: 100%;
@@ -360,10 +378,18 @@ header.bar{
 	color: #202020;
 }
 .vip-slide  {
+	overflow-x: hidden;
 	width: 100%;
-	height: 9.22rem;
+	height: 9.6rem;
 	padding: 0.3rem 0;
 	background: #fff;
+}
+.vip-slide .swiper-container {
+	overflow: visible;
+}
+.vip-slide .swiper-slide a {
+	border-radius: 0.4rem;
+	box-shadow: 0px 8px 9px rgba(0,0,0,0.6);
 }
 
 /*注册和登录*/
@@ -389,14 +415,16 @@ header.bar{
 	padding: 0 1rem  0 0.42rem;
 }
 .phone-input select {
+	height: 1.4rem;
+	line-height: 1.4rem;
 	font-family: PingFang-SC-Medium;
 	font-size: 0.85rem;
 	font-weight: normal;
 	font-stretch: normal;
 	color:  #2f2f2f;
 	padding-right: 30%;
-	background: url(../images/down-icon@3x.png) no-repeat right center;
-	background-size: 12%;
+	background: url(../images/down-icon@3x.png) no-repeat right 55%;
+	background-size: 0.53rem 0.3rem;
 }
 .phone-input select option {
 	text-align: center;
@@ -489,6 +517,8 @@ header.bar{
 	background-size: 100%;
 }
 .protocol label {
+	height: 1rem;
+	line-height: 1.1rem;
 	font-size: 0.8rem;
 	font-weight: normal;
 	font-stretch: normal;
@@ -607,7 +637,7 @@ header.bar{
 .head-right  .button {
 	width: 3.25rem;
 	height: 1.45rem;
-	line-height: 1.45rem;
+	line-height: 1.5rem;
 	margin-top: 0.7rem;
 	padding: 0;
 	color: #fff;
@@ -757,9 +787,19 @@ header.bar{
 	background-size: 100%;
 }
 /* 我的 */
+#updataimg {
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 8;
+	width: 100%;
+	height: 100%;
+	opacity: 0;
+
+}
 .sign-btn .head-center h2 {
 	margin-top: 0.5rem;
-	text-indent: 0.5em;
+	
 }
 .sign-btn .head-center a {
 	width: 4.65rem;
@@ -778,7 +818,9 @@ header.bar{
 	color: #fff;
 	font-size: 0.6rem;
 }
-
+.signs  .head-center h2 {
+	text-indent: 0.5em;
+}
 .head-portrait img {
 	width: 100%;
 	height: 3.2rem;
@@ -826,9 +868,88 @@ header.bar{
 	width: 100%;
 	border-radius: 0.1rem;
 }
+.sign-layer {
+	display: none;
+	position: fixed;
+	top:0;
+	left: 0;
+	z-index: 9;
+	width: 100%;
+	height: 100%;
+}
+.sign-contetn {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	z-index: 10;
+	width: 80%;
+	height: 10.85rem;
+	margin: -5.42rem 0 0 -40%;
+	background: #fff;
+	border-radius: 0.38rem;
+}
+.sign-close-btn {
+	position: absolute;
+	top: 0.85rem;
+	right: 0.8rem;
+	width: 1.5rem;
+	height: 1.5rem;
+	background: url(../images/close-btn.png) no-repeat center center;
+	background-size: 50%;
+}
+.sign-contetn .third-party-title {
+	height: 0.85rem;
+	line-height: 0.85rem;
+	margin:1.6rem auto 0;
+	font-family: PingFang-SC-Bold;
+	font-size: 0.9rem;
+	font-weight: normal;
+	font-stretch: normal;
+	letter-spacing: 0.07rem;
+	color: #000000;
+	background: none;
+}
+.sign-contetn h3 {
+	height: 0.63rem;
+	line-height: 0.63rem;
+	text-align: center;
+	margin: 0.8rem auto 1.57rem;
+	font-family: PingFang-SC-Bold;
+	font-size: 0.6rem;
+	font-weight: normal;
+	font-stretch: normal;
+	letter-spacing: 0rem;
+	color: #676767;
+}
+.sign-contetn .third-party dl {
+	width: 100%;
+	margin: 0;
+	text-align: center;
+}
+.sign-contetn .third-party dt img {
+	width: 3.2rem;
+	height: 3.2rem;
+	margin: 0 auto;
+}
+.sign-contetn  .third-party dd {
+	font-family: PingFang-SC-Bold;
+	font-size: 0.75rem;
+	font-weight: normal;
+	font-stretch: normal;
+	/*line-height: 4.5rem;*/
+	letter-spacing: 0.06rem;
+	color: #000000;
+}
+
 /* 视频详情 */
 .head-video {
 	position: relative;
+}
+.video-mask {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	z-index: 8;
 }
 .video-tip {
 	position: absolute;
@@ -837,6 +958,24 @@ header.bar{
 	z-index: 9;
 	background: rgba(0,0,0,0.7);
 }
+.load-progress {
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	z-index: 8;
+	width: 100%;
+	height: 0.3em;
+	background: #808080;;
+}
+.load-progress span {
+	-webkit-transition: all 0s;
+	transition: all 0s;
+	float: left;
+	width: 0%;
+	height: 0.3em;
+	background: #fb7299;
+}
+
 .video-tip h2,
 .video-tip h3 {
 	display: none;
@@ -866,7 +1005,6 @@ header.bar{
 }
 
 .video-tip button {
-	display: none;
 	position: absolute;
 	top: 50%;
 	left: 50%;
@@ -944,6 +1082,7 @@ header.bar{
 	font-stretch: normal;
 	letter-spacing: 0.06rem;
 	color: #ffffff;
+
 }
 .sk i {
 	font-family: PingFang-SC-Regular;
@@ -951,21 +1090,19 @@ header.bar{
 	color: #ffc002;
 }
 .video-tip .play-btn {
-	display: block;
 	background: url(../images/play-btn.png) no-repeat center center;
 	background-size: 85%;
 }
 .video-tip .replay-btn {
-	
 	background: url(../images/replay-btn.png) no-repeat center center;
 	background-size: 100%;
 }
 .video-tip .pause-btn {
-	display: none;
 	background: url(../images/pause-btn.png) no-repeat center center;
 	background-size: 85%;
 }
 .video-tip .next-btn {
+	display: none;
 	left: 75%;
 	background: url(../images/next-btn.png) no-repeat center center;
 	background-size: 85%;
@@ -1008,6 +1145,11 @@ header.bar{
 	height: 2rem;
 	line-height: 1.5rem;
 	padding: 0.5rem 3% 0;
+}
+.details .titles .icon {
+	font-size: 0.5rem;
+	margin-left: 1rem;
+	color: #fb7299;
 }
 .pic-list {
 	-webkit-overflow-scrolling: touch;
@@ -1056,7 +1198,7 @@ header.bar{
 .comment dd {
 	float: left;
 	width: 86%;
-	padding: 0.25rem 3% 0.7rem 0;
+	padding: 0.25rem 3% 0.2rem 0;
 	margin-left: 3%;
 	border-bottom: 0.05rem solid #ccc;
 }
@@ -1076,31 +1218,52 @@ header.bar{
 	text-overflow: ellipsis;
 	white-space: nowrap;
 	width: 100%;
-	height: 0.72rem;
-	line-height: 0.72rem;
+	min-height: 1rem;
+	line-height: 1rem;
 	font-size: 0.7rem;
 	color: #4c4c4c;
 }
+.comment-con-act {
+	overflow: visible;
+	white-space: normal;
+	height: 100%;
+}
 .comment dd div {
 	width: 100%;
-	height: 0.57rem;
-	line-height: 0.57rem;
+	height: 1.5rem;
+	line-height: 1.5rem;
 	font-size: 0.6rem;
 	color:  #4c4c4c;
-	margin-top: 0.78rem;
+	margin-top: 0.28rem;
 }
 .comment dd span {
 	display: inline-block;
 	float: right;
-	width: 5%;
-	height: 0.57rem;
-	background: url(../images/icon-more@3x.png) no-repeat center center;
-	background-size: 100%;
+	width: 15%;
+	height: 1.5rem;
+	background: url(../images/icon-more@3x.png) no-repeat right center;
+	background-size: 40%;
 }
 .comment dd em {
 	margin-left: 4%;
 }
-
+#comment_text {
+	width: 90%;
+	height: 3rem;
+	padding: 2%;
+	margin: 1rem 5% 0;
+	font-size: 0.6rem;
+	line-height: 1rem;
+	background: #f1f1f1;
+	border-radius: 0.35rem;
+}
+.comment-error {
+	width: 90%;
+	height: 1rem;
+	line-height: 1rem;
+	margin: 0 auto;
+	color: red;
+}
 .nocomment {
 	padding-bottom: 1rem;
 }
@@ -1110,6 +1273,7 @@ header.bar{
 .nocomment-con {
 	display: none;
 	width: 100%;
+	margin-bottom: 1rem;
 	text-align: center;
 	font-size: 0.7rem;
     color: #4c4c4c;
@@ -1125,10 +1289,11 @@ header.bar{
 .nocomment .nocomment-con  {
 	display: block;
 } 
-.modal {
+.pay-tip  {
 	width: 14.5rem;
 }
-.modal-title {
+.post-comment .modal-title,
+.pay-tip .modal-title {
 	font-family: PingFang-SC-Bold;
 	font-size: 0.9rem;
 	font-weight: normal;
@@ -1137,7 +1302,8 @@ header.bar{
 	letter-spacing: 0rem;
 	color: #202020;
 }
-.modal-title+.modal-text {
+.post-comment .modal-title+.modal-text,
+.pay-tip .modal-title+.modal-text {
 	font-family: PingFang-SC-Medium;
 	font-size: 0.75rem;
 	font-weight: normal;
@@ -1147,20 +1313,94 @@ header.bar{
 	color: #202020;
 	text-align: left;
 }
-.modal-text span {
+.pay-tip .modal-text span {
 	color: #505050;
 }
-.modal-inner {
+.post-comment .modal-inner,
+.pay-tip .modal-inner {
 	background: #fff;
 }
-.modal-button {
+.post-comment .modal-inner {
+	padding: 0.75rem 0 0;
+}
+.comment-modal-btn {
+	height: 2.2rem;
+    overflow: hidden;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+}
+.comment-modal-btn:after {
+	content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: auto;
+    top: auto;
+    height: 1px;
+    width: 100%;
+    background-color: #b5b5b5;
+    display: block;
+    z-index: 15;
+    -webkit-transform-origin: 50% 100%;
+    transform-origin: 50% 100%;
+}
+.comment-modal-btn button {
+	float: left;
+	width: 50%;
+    padding: 0 .25rem;
+    height: 2.2rem;
+    font-size: .85rem;
+    line-height: 2.2rem;
+    text-align: center;
+    color: #202020;
+    background: #fff;
+    display: block;
+    position: relative;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    cursor: pointer;
+    box-sizing: border-box;
+    -webkit-box-flex: 1;
+    -ms-flex: 1;
+}
+.comment-modal-btn .comment-close:after {
+	content: '';
+    position: absolute;
+    right: 0;
+    top: 0;
+    left: auto;
+    bottom: auto;
+    width: 1px;
+    height: 100%;
+    background-color: #b5b5b5;
+    display: block;
+    z-index: 15;
+    -webkit-transform-origin: 100% 50%;
+    transform-origin: 100% 50%;
+}
+
+.post-comment .modal-button,
+.pay-tip .modal-button {
 	height: 2.35rem;
 	line-height: 2.35rem;
 	color: #202020;
 	font-size: 0.8rem;
 	background: #fff;
 }
-.modal-buttons span:first-child {
+.post-comment .comment-yes {
+	border-radius: 0 0 .35rem 0rem;
+
+}
+.post-comment  .comment-close{
+	border-radius: 0 0 0rem .35rem;
+	color: #666;
+}
+.pay-tip .modal-buttons span:first-child {
 	color: #ffc002;
 }
 /* 我的账号 */

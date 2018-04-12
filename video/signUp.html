@@ -16,12 +16,12 @@
 <body>
     <div class="page">
         <header class="bar bar-nav">
-        	<a class="button button-link button-nav pull-right" href="signIn.html" data-transition='slide-out'>
-		      短信登录
-		    </a>
+            <a class="button button-link button-nav pull-right" href="signIn.html" data-transition='slide-out'>
+              短信登录
+            </a>
             <a class="button button-link button-nav pull-left back" href="" data-transition='slide-out'>
-		      <span class="icon icon-left"></span>
-		    </a>
+              <span class="icon icon-left"></span>
+            </a>
             <h1 class="title">注册</h1>
         </header>
         <div class="content">
@@ -40,13 +40,13 @@
                     </dd>
                 </dl>
             </div>
-            <a href='identify-code.html' external  class="button button-big button-round post-code">获取短信验证码 </a>
+            <button class="button button-big button-round post-code">获取短信验证码 </button>
             <div class="protocol">
                 <input id='protocol_check' type="checkbox" />
                 <label for="protocol_check">我已阅读并同意</label><a external href="http://www.baidu.com">《用户注册协议》</a>
             </div>
             <div class="helps">
-                <a external href="" >帮助</a>
+                <a external href="">帮助</a>
             </div>
             <div class="third-party">
                 <h2 class="third-party-title">
@@ -67,9 +67,38 @@
                     </div>
                 </div>
             </div>
-        </div>     
+        </div>
     </div>
     <script type='text/javascript' src='js/zepto.min.js' charset='utf-8'></script>
+    <script>
+    $.config = {
+        autoInit: true //no recommend
+    }
+    </script>
     <script type='text/javascript' src='js/sm.min.js' charset='utf-8'></script>
+    <script>
+    $(document).on('click', '.post-code', function() {
+        if (!(/^1[34578]\d{9}$/.test($(".pull-left input").val()))) {
+            $.alert('手机号码有误，请重新输入');
+        } else if (!$("#protocol_check").is(':checked')) {
+            $.alert('请阅读并同意《用户注册协议》');
+        } else {
+            $.ajax({
+                url: 'data/singin.json',
+                type: 'post',
+                dataType: 'json',
+                success: function(data) {
+                    if (data.result) {
+                        $.alert('该手机号码已经注册了');
+                    } else {
+                        window.location.href = 'identify-code.html';
+                    }
+                }
+            })
+        }
+
+    });
+    </script>
 </body>
+
 </html>

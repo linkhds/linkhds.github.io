@@ -1,26 +1,193 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-		<meta name="apple-mobile-web-app-capable" content="yes">
-		<meta name="apple-mobile-web-app-status-bar-style" content="black">
-		<meta name="format-detection" content="telephone=no, email=no">
-		<meta name="renderer" content="webkit">
-		<title></title>
-    </head>
-    <body>
-		<ul>
-			<li><a href="signIn.html">登录</a></li>
-			<li><a href="signUp.html">注册</a></li>
-			<li><a href="openvip.html">开通VIP</a></li>
-			<li><a href="pay.html">支付</a></li>
-			<li><a href="identify-code.html">验证码</a></li>
-			<li><a href="index1.html">首页</a></li>
-			<li><a href="classify.html">分类</a></li>
-			<li><a href="VIP.html">VIP</a></li>
-			<li><a href="personal.html">我的</a></li>
-			<li><a href="video-details.html">视频详情</a></li>
-		</ul>
-    </body>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>首页</title>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="stylesheet" href="css/sm.min.css">
+    <link rel="stylesheet" href="css/swiper.min.css" />
+    <link rel="stylesheet" href="css/common.css" />
+</head>
+
+<body>
+    <div class="page"  id="page-infinite-scroll-bottom">
+        
+        <header class="bar bar-nav">
+            <h1 class="title">首页</h1>
+        </header>
+        <nav class="bar bar-tab">
+            <a class="tab-item external active" href="index.html">
+                <span class="icon icon-sy"></span>
+                <span class="tab-label">体验</span>
+            </a>
+            <a class="tab-item external" href="classify.html">
+                <span class="icon icon-fl"></span>
+                <span class="tab-label">分类</span>
+            </a>
+            <a class="tab-item external" href="VIP.html">
+                <span class="icon icon-vip"></span>
+                <span class="tab-label">VIP</span>
+            </a>
+            <a class="tab-item external" href="star.html">
+                <span class="icon icon-mx"></span>
+                <span class="tab-label">明星</span>
+            </a>
+            <a class="tab-item external" href="personal.html">
+                <span class="icon icon-wd"></span>
+                <span class="tab-label">我的</span>
+            </a>
+        </nav>
+        <div class="content">
+            <div class="head-slide">
+                <div class="swiper-container">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide ">
+                            <a href="video-details.html" external>
+                                <h3>勇敢者游戏：决战丛林</h3>
+                                <img src="images/updata/banner01.png">
+                            </a>
+                        </div>
+                        <div class="swiper-slide">
+                            <a href="" external>
+                                <h3>勇敢者游戏：决战丛林</h3>
+                                <img src="images/updata/banner01.png">
+                            </a>
+                        </div>
+                        <div class="swiper-slide">
+                            <a href="" external>
+                                <h3>勇敢者游戏：决战丛林</h3>
+                                <img src="images/updata/banner01.png">
+                            </a>
+                        </div>
+                        <div class="swiper-slide">
+                            <a href="" external>
+                                <h3>勇敢者游戏：决战丛林</h3>
+                                <img src="images/updata/banner01.png">
+                            </a>
+                        </div>
+                        <div class="swiper-slide">
+                            <a href="" external>
+                                <h3>勇敢者游戏：决战丛林</h3>
+                                <img src="images/updata/banner01.png">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="ad-title">
+                <a href="" class="external">
+                    <span class="icon icon-right pull-right"></span>
+                    <h3>会员仅18元/月，开会员最高再送1年VIP</h3>
+                </a>
+            </div>
+            <div class="infinite-scroll infinite-scroll-bottom" data-distance="50">
+                <ul class="list-container video-list clearfix">
+                </ul>
+                <!-- 加载提示符 -->
+                <div class="infinite-scroll-preloader">
+                    <div class="preloader"></div>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+    <script type='text/javascript' src='js/zepto.min.js' charset='utf-8'></script>
+    <script type='text/javascript' src='js/sm.min.js' charset='utf-8'></script>
+    <script src="js/swiper.min.js"></script>
+    <script src="js/lazyload.js"></script>
+    <script src="js/zepto.cookie.js"></script>
+    <script>
+    $(function() {
+        // 加载flag
+        var loading = false;
+        // 最多可加载的条目
+        var maxItems;
+
+        // 每次加载添加多少条目
+        var itemsPerLoad = 10;
+
+        function addItems(number, lastIndex) {
+            // 生成新条目的HTML
+            var html = '';
+            $.ajax({
+                url: 'data/video.json',
+                type: 'get',
+                dataType: 'json',
+                success: function(data) {
+                    maxItems = data.total;
+                    for (var i = 0; i < data.result.length; i++) {
+                        html += "<li><a href='" + data.result[i].urls + "' external><dl><dt><span " +(data.result[i].tip == '' ? '' : 'style=display:block') +">" + data.result[i].tip  + "</span><img class='lazy' src='images/loading.png' data-original='" + data.result[i].src  + "' alt='' /></dt><dd>"+data.result[i].title + "</dd></dl></a></li>";
+                    }
+                    // 添加新条目
+                    $('.infinite-scroll-bottom .list-container').append(html);
+                    $("img.lazy").lazyload({
+                        effect: "fadeIn",
+                        container: $(".content")
+                    });
+                }
+            })
+            
+            
+
+        }
+        //预先加载20条
+        addItems(itemsPerLoad, 0);
+
+        // 上次加载的序号
+
+        var lastIndex = 20;
+        //无限滚动
+        $(document).on("pageInit", "#page-infinite-scroll-bottom", function(e, id, page) {
+            var loading = false;
+            // 每次加载添加多少条目
+            var itemsPerLoad = 20;
+            // 最多可加载的条目
+            var maxItems = 100;
+            var lastIndex = $('.list-container li').length;
+            $(page).on('infinite', function() {
+                // 如果正在加载，则退出
+                if (loading) return;
+                // 设置flag
+                loading = true;
+                // 模拟1s的加载过程
+                setTimeout(function() {
+                    // 重置加载flag
+                    loading = false;
+                    if ($(".video-list li").length == 50) {
+                        // 加载完毕，则注销无限加载事件，以防不必要的加载
+                        $.detachInfiniteScroll($('.infinite-scroll'));
+                        // 删除加载提示符
+                        $('.infinite-scroll-preloader').remove();
+                        return;
+                    }
+                    addItems(itemsPerLoad, lastIndex);
+                    // 更新最后加载的序号
+                    lastIndex = $('.list-container li').length;
+                    $.refreshScroller();
+                }, 1000);
+            });
+        });
+        var swiper = new Swiper('.swiper-container', {
+            autoplay: { delay:3000,disableOnInteraction:false},
+            speed: 1000,
+            autoplayDisableOnInteraction: false,
+            loop: true,
+            centeredSlides: true,
+            slidesPerView: 1,
+            pagination: '.swiper-pagination',
+            paginationClickable: true,
+            onInit: function(swiper) {
+                swiper.slides[2].className = "swiper-slide swiper-slide-active"; //第一次打开不要动画
+            }
+        });
+        $.init();
+    });
+    </script>
+</body>
+
 </html>

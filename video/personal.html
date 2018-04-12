@@ -19,7 +19,7 @@
             <h1 class="title">个人中心</h1>
         </header>
         <nav class="bar bar-tab">
-            <a class="tab-item external " href="index1.html">
+            <a class="tab-item external " href="index.html">
                 <span class="icon icon-sy"></span>
                 <span class="tab-label">体验</span>
             </a>
@@ -45,7 +45,7 @@
             </div>
             <ul class="pay-style">
                 <li class="">
-                    <a external href="">
+                    <a class="set-btn" external href="javascript:void(0);">
                         设置
                     </a>
                 </li>
@@ -60,26 +60,72 @@
                     <img src="images/ad@3x.png" alt="" />
                 </a>
             </div>
-        </div>     
+            <div class="sign-layer">
+                <div class="sign-contetn">
+                    <div class="third-party">
+                        <span class="sign-close-btn "></span>
+                        <h2 class="third-party-title">登录爱看视频</h2>
+                        <h3>微信和QQ是两个独立账号，账号信息不互通</h3>
+                        <div class="row no-gutter">
+                            <div class="col-50">
+                                <dl class="pull-right">
+                                    <dt><img src="images/QQ@3x.png" alt="" /></dt>
+                                    <dd>QQ登录</dd>
+                                </dl>
+                            </div>
+                            <div class="col-50">
+                                <dl class="pull-left">
+                                    <dt><img src="images/wx@3x.png" alt="" /></dt>
+                                    <dd>微信登录</dd>
+                                </dl>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
     <script type='text/javascript' src='js/zepto.min.js' charset='utf-8'></script>
-    <script type='text/javascript' src='js/sm.min.js' charset='utf-8'></script>
     <script>
-        var signin = true;
-        var wx = true;
-        var QQ = false;
-        var vip = false;
-        if(signin == false) {
-            $(".head-content").html("<div class='head-left pull-left'><div class='head-portrait'><img src='images/head-icon@3x.png' alt='' /></div></div><div class='head-center pull-left'><h2><a external href='signIn.html' class='button button-round '>点击登录</a></h2><h3>登录后可同步VIP特权</h3></div>")
-        }else if(signin && wx && vip) {
-            $(".head-content").html("<div class='head-left pull-left'><div class='head-portrait'><span></span><img src='images/head-pic@3x.png' alt='' /></div></div><div class='head-center pull-left'><h2>般若意匠</h2><h3><span></span></h3></div>").addClass("signs wx vips");
-        }else if(signin && QQ && vip) {
-            $(".head-content").html("<div class='head-left pull-left'><div class='head-portrait'><span></span><img src='images/head-pic@3x.png' alt='' /></div></div><div class='head-center pull-left'><h2>般若意匠</h2><h3><span></span></h3></div>").addClass("signs QQ vips");
-        }else if(signin && wx ) {
-            $(".head-content").html("<div class='head-left pull-left'><div class='head-portrait'><span></span><img src='images/head-pic@3x.png' alt='' /></div></div><div class='head-center pull-left'><h2>般若意匠</h2><h3><a external href='openvip.html' class='button button-round '>开通VIP会员</a></h3></div>").addClass("signs wx");
-        }else if(signin && QQ ) {
-            $(".head-content").html("<div class='head-left pull-left'><div class='head-portrait'><span></span><img src='images/head-pic@3x.png' alt='' /></div></div><div class='head-center pull-left'><h2>般若意匠</h2><h3><a external href='openvip.html' class='button button-round '>开通VIP会员</a></h3></div>").addClass("signs QQ");
+    $.config = {
+        autoInit: true //no recommend
+    }
+    </script>
+    <script type='text/javascript' src='js/sm.min.js' charset='utf-8'></script>
+    <script src="js/zepto.cookie.js"></script>
+    <script>
+    var signin = $.getCookie('signin');
+    var wx = true;
+    var QQ = false;
+    var vip = false;
+    if (signin) {
+        $(".set-btn").prop('href', 'my-account.html')
+    }
+    if (signin == false || signin == "" || signin == null) {
+        $(".head-content").html("<div class='head-left pull-left'><div class='head-portrait'><img src='images/head-icon@3x.png' alt='' /></div></div><div class='head-center pull-left'><h2><a external href='signIn.html' class='button button-round '>点击登录</a></h2><h3>登录后可同步VIP特权</h3></div>")
+    } else if (signin && wx && vip) {
+        $(".head-content").html("<div class='head-left pull-left'><div class='head-portrait'><span></span><img src='images/head-pic@3x.png' alt='' id='imgs' /><input type='file'  id='updataimg' /></div></div><div class='head-center pull-left'><h2>般若意匠</h2><h3><span></span></h3></div>").addClass("signs wx vips");
+    } else if (signin && QQ && vip) {
+        $(".head-content").html("<div class='head-left pull-left'><div class='head-portrait'><span></span><img src='images/head-pic@3x.png' alt=''id='imgs' /><input type='file'  id='updataimg' /></div></div><div class='head-center pull-left'><h2>般若意匠</h2><h3><span></span></h3></div>").addClass("signs QQ vips");
+    } else if (signin && wx) {
+        $(".head-content").html("<div class='head-left pull-left'><div class='head-portrait'><span></span><img src='images/head-pic@3x.png' alt='' id='imgs' /><input type='file'  id='updataimg' /></div></div><div class='head-center pull-left'><h2>般若意匠</h2><h3><a external href='openvip.html' class='button button-round '>开通VIP会员</a></h3></div>").addClass("signs wx");
+    } else if (signin && QQ) {
+        $(".head-content").html("<div class='head-left pull-left'><div class='head-portrait'><span></span><img src='images/head-pic@3x.png' alt='' id='imgs' /><input type='file'  id='updataimg' /></div></div><div class='head-center pull-left'><h2>般若意匠</h2><h3><a external href='openvip.html' class='button button-round '>开通VIP会员</a></h3></div>").addClass("signs QQ");
+    }
+    $(document).on('change', '#updataimg', function() {
+        var file = $("#updataimg")[0].files[0];
+        var imageType = /^image\//;
+        if ( !imageType.test(file.type) ) {
+            $.alert('请选择图片');
+        }else {
+            var reader = new FileReader();
+            reader.onload = function(e) { 
+                imgs.src = e.target.result;
+            };
+            reader.readAsDataURL(file);
         }
+    })
     </script>
 </body>
+
 </html>

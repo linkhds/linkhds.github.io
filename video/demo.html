@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Demo - light7</title>
+    <meta name="description" content="light7: Build mobile apps with simple HTML, CSS, and JS components.">
+    <meta name="author" content="任行">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="stylesheet" href="css/sm.min.css">
+    <script src="js/jquery-3.3.1.min.js"></script>
+</head>
+
+<body>
+    <div id="page-infinite-scroll" class="page">
+        <header class="bar bar-nav">
+            <a class="button button-link button-nav pull-left back" href="/demos"><span class="icon icon-left"></span>Back</a>
+            <h1 class="title">Infinite Scroll</h1>
+        </header>
+        <div class="content infinite-scroll" data-distance="100">
+            
+            <ul class="list-container">
+                <li class="item-content">
+                    <div class="item-inner">
+                        <div class="item-title">Item</div>
+                    </div>
+                </li>
+                <li class="item-content">
+                    <div class="item-inner">
+                        <div class="item-title">Item</div>
+                    </div>
+                </li>
+                <li class="item-content">
+                    <div class="item-inner">
+                        <div class="item-title">Item</div>
+                    </div>
+                </li>
+                <li class="item-content">
+                    <div class="item-inner">
+                        <div class="item-title">Item</div>
+                    </div>
+                </li>
+                <li class="item-content">
+                    <div class="item-inner">
+                        <div class="item-title">Item</div>
+                    </div>
+                </li>
+                <li class="item-content">
+                    <div class="item-inner">
+                        <div class="item-title">Item</div>
+                    </div>
+                </li>
+                <li class="item-content">
+                    <div class="item-inner">
+                        <div class="item-title">Item</div>
+                    </div>
+                </li>
+                <li class="item-content">
+                    <div class="item-inner">
+                        <div class="item-title">Item</div>
+                    </div>
+                </li>
+                <li class="item-content">
+                    <div class="item-inner">
+                        <div class="item-title">Item</div>
+                    </div>
+                </li>
+                <li class="item-content">
+                    <div class="item-inner">
+                        <div class="item-title">Item</div>
+                    </div>
+                </li>
+                <li class="item-content">
+                    <div class="item-inner">
+                        <div class="item-title">Item</div>
+                    </div>
+                </li>
+                <li class="item-content">
+                    <div class="item-inner">
+                        <div class="item-title">Item</div>
+                    </div>
+                </li>
+                <li class="item-content">
+                    <div class="item-inner">
+                        <div class="item-title">Item</div>
+                    </div>
+                </li>
+                <li class="item-content">
+                    <div class="item-inner">
+                        <div class="item-title">Item</div>
+                    </div>
+                </li>
+            </ul>
+            
+            <div class="infinite-scroll-preloader">
+                <div class="preloader">
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="js/light7.min.js"></script>
+    <script>
+    $(function() {
+        $(document).on("pageInit", "#page-infinite-scroll", function(e, id, page) {
+            function addItems(number, lastIndex) {
+                var html = '';
+                for (var i = 0; i < 20; i++) {
+                    html += '<li class="item-content"><div class="item-inner"><div class="item-title">Item</div></div></li>';
+                }
+                $('.infinite-scroll .list-container').append(html);
+            }
+            var loading = false;
+            $(page).on('infinite', function() {
+
+                if (loading) return;
+
+                loading = true;
+
+                setTimeout(function() {
+                    loading = false;
+
+                    addItems();
+                }, 1000);
+            });
+        });
+        $.init();
+    })
+    </script>
+</body>
+
+</html>

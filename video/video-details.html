@@ -15,28 +15,29 @@
 </head>
 
 <body>
-    <div class="page">
+    <div class="page" id="page-infinite-scroll-bottom">
         <!-- <header class="bar bar-nav">
             <h1 class="title">视频详情</h1>
         </header> -->
         <div class="content details">
             <div class="head-video">
+                <!-- <div class="video-mask"></div> -->
+                <div class="load-progress"><span></span></div>
                 <div class="video-tip">
                     <h2><span class="icon icon-left pull-left "></span><strong>可试看5分钟，开通VIP免费看</strong></h2>
                     <h3><em class="open-vertical-modal pull-right">购买单片</em><span class="icon icon-left pull-left "></span></h3>
-                    <button class='play-btn'></button>
-                    <button class='replay-btn'></button>
-                    <button class='pause-btn'></button>
+                    <button class='btns play-btn'></button>
                     <button class='next-btn'></button>
                     <strong class="times">00:14/07:14</strong>
                     <ul class="check-btn">
-                        <li><em>重新试看</em></li>
+                        <li onclick='replay();'><em>重新试看</em></li>
                         <li><a href="openvip.html">开通VIP会员</a></li>
                     </ul>
                     <div class="sk">您也可以<i>6元购买单片</i></div>
                 </div>
-                <video id="my-video" class="video-js"  preload="auto" poster="images/bg@3x.png" data-setup="{}" webkit-playsinline="true" x-webkit-airplay="true"  playsinline="true">
+                <video id="my-video" class="video-js vjs-default-skin" controls preload="auto" poster="images/bg@3x.png" data-setup="{}" webkit-playsinline="true" playsinline="true" x-webkit-airplay="allow" x5-video-player-type="h5" x5-video-player-fullscreen="true" x5-video-orientation="portraint" style="object-fit:fill">
                     <source src="videos/20.mp4" type="video/mp4">
+                    <p class="vjs-no-js">播放视频需要启用 JavaScript，推荐使用支持HTML5的浏览器访问。</p>
                 </video>
             </div>
             <div class="video-title">
@@ -48,112 +49,203 @@
                     <li>07'14''</li>
                 </ul>
             </div>
-            <h2 class="titles">精彩截图</h2>
+            <h2 class="titles">精彩截图<span class="icon icon-right "></h2>
             <div class="pic-list">
                 <ul class="clearfix">
-                    <li><img src="images/bg1@3x.png" alt="" /></li>
-                    <li><img src="images/bg2@3x.png" alt="" /></li>
-                    <li><img src="images/bg1@3x.png" alt="" /></li>
-                    <li><img src="images/bg2@3x.png" alt="" /></li>
-                    <li><img src="images/bg1@3x.png" alt="" /></li>
-                    <li><img src="images/bg2@3x.png" alt="" /></li>
-                    <li><img src="images/bg1@3x.png" alt="" /></li>
-                    <li><img src="images/bg2@3x.png" alt="" /></li>
+                    <li><img class='lazy' src='images/loading.png' data-original="images/bg1@3x.png" alt="" /></li>
+                    <li><img class='lazy' src='images/loading.png' data-original="images/bg2@3x.png" alt="" /></li>
+                    <li><img class='lazy' src='images/loading.png' data-original="images/bg1@3x.png" alt="" /></li>
+                    <li><img class='lazy' src='images/loading.png' data-original="images/bg2@3x.png" alt="" /></li>
+                    <li><img class='lazy' src='images/loading.png' data-original="images/bg1@3x.png" alt="" /></li>
+                    <li><img class='lazy' src='images/loading.png' data-original="images/bg2@3x.png" alt="" /></li>
+                    <li><img class='lazy' src='images/loading.png' data-original="images/bg1@3x.png" alt="" /></li>
+                    <li><img class='lazy' src='images/loading.png' data-original="images/bg2@3x.png" alt="" /></li>
                 </ul>
             </div>
             <h2 class="titles">全部热评</h2>
-            <a href="signIn.html" class="button post-code payment">1秒登录，说说你的看法</a>
             <!-- <div class="comment nocomment"> -->
             <div class="comment ">
+                <a href="" class="button post-code payment comment-btn"></a>
                 <div class="nocomment-con">
                     <span></span>
                     <strong>暂时还没有评论哦~</strong>
                 </div>
-                <ul>
-                    <li>
-                        <dl class="clearfix">
-                            <dt><img src="images/head-icon@3x.png" alt="" /></dt>
-                            <dd>
-                                <h3>alpho</h3>
-                                <p class="comment-con">卡戴珊吸精姐妹花中的骚女小妹，这就是真相卡戴珊吸精姐妹花中的骚女小妹，这就是真相</p>
-                                <div>
-                                    <span class="more"></span>
-                                    <strong>回复</strong>
-                                    <em>2016-10-15</em>
-                                </div>
-                            </dd>
-                        </dl>
-                    </li>
-                    <li>
-                        <dl class="clearfix">
-                            <dt><img src="images/head-icon@3x.png" alt="" /></dt>
-                            <dd>
-                                <h3>alpho</h3>
-                                <p class="comment-con">卡戴珊吸精姐妹花中的骚女小妹，这就是真相卡戴珊吸精姐妹花中的骚女小妹，这就是真相</p>
-                                <div>
-                                    <span class="more"></span>
-                                    <strong>回复</strong>
-                                    <em>2016-10-15</em>
-                                </div>
-                            </dd>
-                        </dl>
-                    </li>
-                </ul>
+                <div class="infinite-scroll infinite-scroll-bottom">
+                    <ul class="list-container comment-list">
+                    </ul>
+                    <!-- 加载提示符 -->
+                    <div class="infinite-scroll-preloader">
+                        <div class="preloader"></div>
+                    </div>
+                </div>
             </div>
-        </div>     
+        </div>
     </div>
     <script type='text/javascript' src='js/zepto.min.js' charset='utf-8'></script>
+    <script>
+    $.config = {
+        autoInit: true //no recommend
+    }
+    </script>
     <script type='text/javascript' src='js/sm.min.js' charset='utf-8'></script>
     <script src="js/video.min.js"></script>
+    <script src="js/lazyload.js"></script>
+    <script src="js/zepto.cookie.js"></script>
     <script>
-        var myPlayer = videojs('my-video');
-        videojs("my-video").ready(function(){
-            var myPlayer = this;
-            // myPlayer.play();
-        });
-        $(".play-btn").click(function() {
-            $(".video-tip").hide();
-            $(".play-btn").hide();
-            myPlayer.play();
+    var signin = $.getCookie('signin');
+    if (signin == false || signin == "" || signin == null) {
+        $(".comment-btn").prop('href', 'signIn.html').text("1秒登录，说说你的看法");
+    } else {
+        $(".comment-btn").prop('href', 'JavaScript:postComment()').text("我来说两句");
+    }
+    //评论输入框
+    function postComment() {
+        $.modal({
+            extraClass: 'post-comment',
+            title: '输入您的评论',
+            text: "<textarea  id='comment_text' ></textarea><p class='comment-error'></p><div class='comment-modal-btn'><button class='comment-close' >取消</button><button class='comment-yes'>提交</button></div>",
+            verticalButtons: true,
+
         })
-        // times()
-        // function times() {
-        //     setTimeout(() => {
-        //         var whereYouAt = myPlayer.currentTime();
-        //         if(whereYouAt >= 6) {
-        //             myPlayer.pause();
-        //         }else {
-        //             times();
-        //         }
-        //     }, 500)
-        // }
-        $(document).on('click','.open-vertical-modal', function () {
-            $.modal({
-              title:  '购买本片',
-              text: '<p>应版权方要求本片需购买观看完整版</p><p>价格：6元（VIP优惠价3元）</p><span>观影有效期至：2018-03-08  13:14</span>',
-              verticalButtons: true,
-              buttons: [
-                {
-                  text: '开通VIP享3元优惠购买',
-                  onClick: function() {
-                    $.alert('You clicked first button!')
-                  }
+    }
+    //取消评论输入框
+    $(document).on('click', '.comment-close', function() {
+        $.closeModal('.post-comment')
+    })
+    //提交评论
+    $(document).on('click', '.comment-yes', function() {
+        if ($("#comment_text").val() == '') {
+            $(".comment-error").text("评论不能为空")
+        }
+    })
+    $(document).on('focus', '#comment_text', function() {
+        $(".comment-error").text("")
+    })
+    $("img.lazy").lazyload({
+        effect: "fadeIn",
+        container: $(".pic-list")
+    });
+    var myVideo = document.getElementById("my-video");
+    var myPlayer = videojs('my-video');
+    videojs("my-video").ready(function() {
+        var myPlayer = this;
+        // myPlayer.play();
+    });
+    $(".play-btn").click(function() {
+        $(".video-tip").hide();
+        $(".btns").hide();
+        myPlayer.play();
+    })
+
+    function replay() {
+        myPlayer.currentTime("0");
+        myPlayer.play();
+        $(".video-tip, .video-tip h2, .check-btn, .sk").hide();
+    }
+    myPlayer.on('timeupdate', function() {
+        if (myPlayer.currentTime() >= 6) {
+            myPlayer.pause();
+            myVideo.pause();
+            $(".video-tip, .video-tip h2, .check-btn, .sk").show();
+        }
+        $(".load-progress span").width($(".vjs-progress-holder").attr('aria-valuenow') + '%');
+    });
+    //点击购买
+    $(document).on('click', '.open-vertical-modal', function() {
+        $.modal({
+            extraClass: 'pay-tip',
+            title: '购买本片',
+            text: '<p>应版权方要求本片需购买观看完整版</p><p>价格：6元（VIP优惠价3元）</p><span>观影有效期至：2018-03-08  13:14</span>',
+            verticalButtons: true,
+            buttons: [{
+                    text: '开通VIP享3元优惠购买',
+                    onClick: function() {
+                        $.alert('You clicked first button!')
+                    }
                 },
                 {
-                  text: '6元原件购买',
-                  onClick: function() {
-                    $.alert('You clicked second button!')
-                  }
+                    text: '6元原件购买',
+                    onClick: function() {
+                        $.alert('You clicked second button!')
+                    }
                 },
                 {
-                  text: '取消',
-                  onClick: function() {
-                    close: true
-                  }
+                    text: '取消',
+                    onClick: function() {
+                        close: true
+                    }
                 },
-              ]
+            ]
+        })
+    });
+    $(function() {
+        // 加载flag
+        var loading = false;
+        // 最多可加载的条目
+        var maxItems;
+        // 每次加载添加多少条目
+        var itemsPerLoad = 10;
+
+        function addItems(number, lastIndex) {
+            // 生成新条目的HTML
+            var html = '';
+            $.ajax({
+                url: 'data/comment.json',
+                type: 'get',
+                dataType: 'json',
+                success: function(data) {
+                    if (data.result == "" || data.result == null || !data.result) {
+                        $(".comment .infinite-scroll").hide();
+                        $(".nocomment-con").show();
+                    } else {
+                        maxItems = data.total;
+                        for (var i = 0; i < data.result.length; i++) {
+                            html += "<li><dl class='clearfix'><dt><img src='" + data.result[i].headpic + "' alt='' /></dt><dd><h3>" + data.result[i].username + "</h3><p class='comment-con'>" + data.result[i].text + "</p><div><span class='more'></span><strong>回复</strong><em>" + data.result[i].time + "</em></div></dd></dl></li>";
+                        }
+                        $('.comment-list').append(html);
+
+                    }
+                }
             })
+        }
+        //预先加载20条
+        addItems(itemsPerLoad, 0);
+        // 上次加载的序号
+        var lastIndex = 10;
+        //无限滚动
+        $(document).on("pageInit", "#page-infinite-scroll-bottom", function(e, id, page) {
+            var loading = false;
+            var lastIndex = $('.comment-list li').length;
+            $(page).on('infinite', function() {
+                // 如果正在加载，则退出
+                if (loading) return;
+                // 设置flag
+                loading = true;
+                // 模拟1s的加载过程
+                setTimeout(function() {
+                    // 重置加载flag
+                    loading = false;
+                    if ($(".comment-list li").length == maxItems) {
+                        // 加载完毕，则注销无限加载事件，以防不必要的加载
+                        $.detachInfiniteScroll($('.infinite-scroll'));
+                        // 删除加载提示符
+                        $('.infinite-scroll-preloader').remove();
+                        return;
+                    }
+                    addItems(itemsPerLoad, lastIndex);
+                    // 更新最后加载的序号
+                    lastIndex = $('.comment-list li').length;
+                    $.refreshScroller();
+                }, 1000);
+            });
         });
+        $.init();
+        //点击更多...
+        $(document).on('click', '.more', function() {
+            $(this).parent().siblings('p').toggleClass("comment-con-act");
+        })
+    });
     </script>
 </body>
+
 </html>
