@@ -1,0 +1,50 @@
+@charset "UTF-8";
+/*by:clanlan 2020-12-10*/
+*,*:before,*:after {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box
+}
+*{margin:0; padding:0; list-style:none;}
+html {overflow-y: scroll;font-size:62.5%;}
+body {
+    background:#fff;
+    -webkit-font-smoothing: antialiased;
+    margin: 0;
+    -webkit-text-size-adjust: 100%;
+    color:#888;
+    -webkit-appearance: none;
+    font-size:12px;
+    line-height:1.6;
+    font-family: "微软雅黑";
+}
+
+::-moz-selection {background: #b3d4fc;text-shadow: none;}
+.clear {zoom: 1}
+.clear:after,header:after,.container:after,.scrolllist:after,.imgMain>li:after,.login:after,.imgMain2>li:after,.dx_menu:after,.top_list li:after{content: "";display: block;clear: both;}
+i,em{font-style:normal;}
+input,select,textarea,button,div{outline:medium;  padding:0; margin:0; border:none; }
+input[type="button"],input[type="submit"], input[type="reset"],button{ cursor: pointer; -webkit-appearance: none; }
+textarea{resize: none;overflow: auto;}
+textarea:focus,input:focus,button:focus,a,div,span{outline: none;}
+a{text-decoration: none;color: #6a7390; cursor: pointer;}
+a:hover,a:active,a:visited{text-decoration: none; }
+img{border:none;vertical-align: top; max-width: 100%;}
+
+.black_bg{display: flex; align-items: center; justify-content: center; height:100vh; width:100%; position:fixed; left:0;top:0;background:url("../images/bg.jpg") no-repeat 0 0 #15161c; background-size:cover;}
+.black_bg>.logo{position:absolute; left:40px;top:20px; width:170px;height:40px;}
+.black_bg>.enter{width:700px;height:697px;background:url("../images/tu.gif")no-repeat center center; background-size:cover;margin:0 auto;display: flex; align-items: center; justify-content: center; }
+.black_bg>.enter>.cent{text-align:center;}
+.black_bg>.enter>.cent>.btn{width:260px; height:71px;display:block; color:#fff; text-align:center;font:bold 20px/70px "宋体";margin:30px auto; background:url("../images/but_bg.png") no-repeat 0 0;}
+.black_bg>.enter>.cent>.btn:hover{opacity:.8;}
+.black_bg>.enter>.cent>.kfbtn{}
+.black_bg>.enter>.cent>.kfbtn:hover{opacity:.8;}
+#canvas {
+    position: absolute;
+    z-index: 10;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    cursor: none;
+}
